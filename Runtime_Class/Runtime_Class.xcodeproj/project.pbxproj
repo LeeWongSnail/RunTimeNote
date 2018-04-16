@@ -22,6 +22,7 @@
 		EBE502C52084A55200843D3B /* SuperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE502C42084A55200843D3B /* SuperClass.m */; };
 		EBE502C82084A97400843D3B /* ClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE502C72084A97400843D3B /* ClassInfo.m */; };
 		EBE502CB2084B24700843D3B /* ClassIvar.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE502CA2084B24700843D3B /* ClassIvar.m */; };
+		EBE502CE2084C38200843D3B /* ClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE502CD2084C38200843D3B /* ClassProperty.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		EBE502C72084A97400843D3B /* ClassInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassInfo.m; sourceTree = "<group>"; };
 		EBE502C92084B24700843D3B /* ClassIvar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassIvar.h; sourceTree = "<group>"; };
 		EBE502CA2084B24700843D3B /* ClassIvar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassIvar.m; sourceTree = "<group>"; };
+		EBE502CC2084C38200843D3B /* ClassProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassProperty.h; sourceTree = "<group>"; };
+		EBE502CD2084C38200843D3B /* ClassProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassProperty.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +186,8 @@
 				EBE502C72084A97400843D3B /* ClassInfo.m */,
 				EBE502C92084B24700843D3B /* ClassIvar.h */,
 				EBE502CA2084B24700843D3B /* ClassIvar.m */,
+				EBE502CC2084C38200843D3B /* ClassProperty.h */,
+				EBE502CD2084C38200843D3B /* ClassProperty.m */,
 			);
 			path = Objc_Test;
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 				EBE502CB2084B24700843D3B /* ClassIvar.m in Sources */,
 				EBE502B420844B9E00843D3B /* main.m in Sources */,
 				EBE5027920844B6500843D3B /* AppDelegate.m in Sources */,
+				EBE502CE2084C38200843D3B /* ClassProperty.m in Sources */,
 				EBE502C020844FD800843D3B /* MetaClass.m in Sources */,
 				EBE502C52084A55200843D3B /* SuperClass.m in Sources */,
 			);

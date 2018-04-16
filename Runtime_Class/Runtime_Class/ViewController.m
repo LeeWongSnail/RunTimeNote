@@ -11,6 +11,7 @@
 #import "ClassIvar.h"
 #import "MetaClass.h"
 #import "SuperClass.h"
+#import "ClassProperty.h"
 #import "ClassInfo.h"
 #import "Father.h"
 #import "Son.h"
@@ -65,10 +66,16 @@
 
 }
 
+- (void)classProperty
+{
+    ClassProperty *property = [[ClassProperty alloc] init];
+    [property getProperty];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self fetchClassIvar];
+    [self classProperty];
 }
 
 
