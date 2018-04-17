@@ -10,4 +10,9 @@
 
 @implementation Father
 
+- (void)eat
+{
+    NSLog(@"%s",__func__);
+}
+
 @end

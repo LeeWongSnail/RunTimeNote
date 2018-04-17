@@ -12,4 +12,7 @@
 @property (nonatomic, assign) NSInteger age;
 @property (nonatomic, copy) NSString *icon;
 @property (nonatomic, strong) NSArray *works;
+
+
+- (void)cry;
 @end

@@ -12,6 +12,8 @@
 #import "MetaClass.h"
 #import "SuperClass.h"
 #import "ClassProperty.h"
+#import "ClassProtocol.h"
+#import "ClassMethod.h"
 #import "ClassInfo.h"
 #import "Father.h"
 #import "Son.h"
@@ -69,13 +71,39 @@
 - (void)classProperty
 {
     ClassProperty *property = [[ClassProperty alloc] init];
-    [property getProperty];
+//    [property getProperty];
+    
+//    [property copyPropertyList];
+//    NSLog(@"add a property");
+    [property addPropertyDynamic];
+    [property replaceClassProperty];
+    
+}
+
+
+- (void)class_getMethod
+{
+    ClassMethod *m = [[ClassMethod alloc] init];
+//    [m getInstanceMethod];
+    
+//    [m replaceMethodImplementation];
+    
+//    [m getMethodImplementation];
+    [m addClassMethod];
+}
+
+- (void)protocol_getProtocolList
+{
+    ClassProtocol *p = [[ClassProtocol alloc] init];
+//    [p copyProtocolList];
+//    [p classConformsProtocol];
+    [p addProtocol];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self classProperty];
+    [self protocol_getProtocolList];
 }
 
 

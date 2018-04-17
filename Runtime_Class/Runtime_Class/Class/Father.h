@@ -10,4 +10,7 @@
 
 @interface Father : NSObject
 @property (nonatomic, strong) NSString *name;
+
+
+- (void)eat;
 @end

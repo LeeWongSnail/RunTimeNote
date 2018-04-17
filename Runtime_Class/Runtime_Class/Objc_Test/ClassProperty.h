@@ -16,4 +16,7 @@
 
 
 - (void)getProperty;
+- (void)copyPropertyList;
+- (void)addPropertyDynamic;
+- (void)replaceClassProperty;
 @end

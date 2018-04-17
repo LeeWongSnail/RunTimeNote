@@ -10,4 +10,9 @@
 
 @implementation Son
 
+- (void)cry
+{
+    NSLog(@"%s",__func__);
+}
+
 @end

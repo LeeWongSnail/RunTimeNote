@@ -61,11 +61,6 @@
 {
     Class cls = objc_allocateClassPair(NSObject.class, "Person", 0);
     class_addIvar(cls, "_nickname", sizeof(NSString *), log(sizeof(NSString *)), "i");
-    objc_property_attribute_t type = {"T", "@\"NSString\""};
-    objc_property_attribute_t ownership = { "C", "" };
-    objc_property_attribute_t backingivar = { "V", "_ivar1"};
-    objc_property_attribute_t attrs[] = {type, ownership, backingivar};
-    class_addProperty(cls, "property2", attrs, 3);
     objc_registerClassPair(cls);
     id instance = [[cls alloc] init];
     
