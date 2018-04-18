@@ -17,7 +17,6 @@
 #import "ClassCreateInstance.h"
 #import "ClassMethod.h"
 #import "ClassInfo.h"
-#import "ClassMRC.h"
 #import "Father.h"
 #import "Son.h"
 
@@ -114,17 +113,11 @@
     [ins createInstance];
 }
 
-- (void)MRC_Test
-{
-    ClassMRC *mrc = [[ClassMRC alloc] init];
-//    [mrc createInstance];
-    [mrc class_destoryInstance];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self MRC_Test];
+    [self clsCreateInstance];
 }
 
 

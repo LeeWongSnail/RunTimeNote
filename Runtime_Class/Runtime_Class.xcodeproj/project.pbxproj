@@ -18,16 +18,15 @@
 		EBE502B520844B9E00843D3B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBE502B020844B9E00843D3B /* Info.plist */; };
 		EBE502B920844BE700843D3B /* Father.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE502B820844BE700843D3B /* Father.m */; };
 		EBE502BC20844BFB00843D3B /* Son.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE502BB20844BFB00843D3B /* Son.m */; };
-		EBE502C020844FD800843D3B /* MetaClass.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE502BF20844FD800843D3B /* MetaClass.m */; };
-		EBE502C52084A55200843D3B /* SuperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE502C42084A55200843D3B /* SuperClass.m */; };
-		EBE502C82084A97400843D3B /* ClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE502C72084A97400843D3B /* ClassInfo.m */; };
-		EBE502CB2084B24700843D3B /* ClassIvar.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE502CA2084B24700843D3B /* ClassIvar.m */; };
-		EBE502CE2084C38200843D3B /* ClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE502CD2084C38200843D3B /* ClassProperty.m */; };
-		EBE502D12084E98D00843D3B /* ClassMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE502D02084E98D00843D3B /* ClassMethod.m */; };
-		EBE502D42085C75100843D3B /* ClassProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE502D32085C75100843D3B /* ClassProtocol.m */; };
-		EBE502DF208639E200843D3B /* ClassCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE502DE208639E200843D3B /* ClassCreate.m */; };
-		EBE502E220863DB800843D3B /* ClassCreateInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE502E120863DB800843D3B /* ClassCreateInstance.m */; };
-		EBE502E52086DF9D00843D3B /* ClassMRC.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE502E42086DF9D00843D3B /* ClassMRC.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EBE503462086E86200843D3B /* SuperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE503332086E86100843D3B /* SuperClass.m */; };
+		EBE503472086E86200843D3B /* ClassCreateInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE503352086E86100843D3B /* ClassCreateInstance.m */; };
+		EBE503492086E86200843D3B /* ClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE503382086E86100843D3B /* ClassProperty.m */; };
+		EBE5034A2086E86200843D3B /* ClassMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE5033A2086E86100843D3B /* ClassMethod.m */; };
+		EBE5034B2086E86200843D3B /* ClassIvar.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE5033B2086E86100843D3B /* ClassIvar.m */; };
+		EBE5034C2086E86200843D3B /* ClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE5033D2086E86200843D3B /* ClassInfo.m */; };
+		EBE5034D2086E86200843D3B /* ClassProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE5033E2086E86200843D3B /* ClassProtocol.m */; };
+		EBE5034E2086E86200843D3B /* ClassCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE503402086E86200843D3B /* ClassCreate.m */; };
+		EBE5034F2086E86200843D3B /* MetaClass.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE503442086E86200843D3B /* MetaClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,26 +67,24 @@
 		EBE502B820844BE700843D3B /* Father.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Father.m; sourceTree = "<group>"; };
 		EBE502BA20844BFB00843D3B /* Son.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Son.h; sourceTree = "<group>"; };
 		EBE502BB20844BFB00843D3B /* Son.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Son.m; sourceTree = "<group>"; };
-		EBE502BE20844FD800843D3B /* MetaClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetaClass.h; sourceTree = "<group>"; };
-		EBE502BF20844FD800843D3B /* MetaClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MetaClass.m; sourceTree = "<group>"; };
-		EBE502C32084A55200843D3B /* SuperClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperClass.h; sourceTree = "<group>"; };
-		EBE502C42084A55200843D3B /* SuperClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperClass.m; sourceTree = "<group>"; };
-		EBE502C62084A97400843D3B /* ClassInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassInfo.h; sourceTree = "<group>"; };
-		EBE502C72084A97400843D3B /* ClassInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassInfo.m; sourceTree = "<group>"; };
-		EBE502C92084B24700843D3B /* ClassIvar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassIvar.h; sourceTree = "<group>"; };
-		EBE502CA2084B24700843D3B /* ClassIvar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassIvar.m; sourceTree = "<group>"; };
-		EBE502CC2084C38200843D3B /* ClassProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassProperty.h; sourceTree = "<group>"; };
-		EBE502CD2084C38200843D3B /* ClassProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassProperty.m; sourceTree = "<group>"; };
-		EBE502CF2084E98D00843D3B /* ClassMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassMethod.h; sourceTree = "<group>"; };
-		EBE502D02084E98D00843D3B /* ClassMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassMethod.m; sourceTree = "<group>"; };
-		EBE502D22085C75100843D3B /* ClassProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassProtocol.h; sourceTree = "<group>"; };
-		EBE502D32085C75100843D3B /* ClassProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassProtocol.m; sourceTree = "<group>"; };
-		EBE502DD208639E200843D3B /* ClassCreate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassCreate.h; sourceTree = "<group>"; };
-		EBE502DE208639E200843D3B /* ClassCreate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassCreate.m; sourceTree = "<group>"; };
-		EBE502E020863DB800843D3B /* ClassCreateInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassCreateInstance.h; sourceTree = "<group>"; };
-		EBE502E120863DB800843D3B /* ClassCreateInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassCreateInstance.m; sourceTree = "<group>"; };
-		EBE502E32086DF9D00843D3B /* ClassMRC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassMRC.h; sourceTree = "<group>"; };
-		EBE502E42086DF9D00843D3B /* ClassMRC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassMRC.m; sourceTree = "<group>"; };
+		EBE503322086E86100843D3B /* ClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassInfo.h; sourceTree = "<group>"; };
+		EBE503332086E86100843D3B /* SuperClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperClass.m; sourceTree = "<group>"; };
+		EBE503342086E86100843D3B /* ClassProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassProtocol.h; sourceTree = "<group>"; };
+		EBE503352086E86100843D3B /* ClassCreateInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassCreateInstance.m; sourceTree = "<group>"; };
+		EBE503372086E86100843D3B /* ClassCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassCreate.h; sourceTree = "<group>"; };
+		EBE503382086E86100843D3B /* ClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassProperty.m; sourceTree = "<group>"; };
+		EBE503392086E86100843D3B /* MetaClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetaClass.h; sourceTree = "<group>"; };
+		EBE5033A2086E86100843D3B /* ClassMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassMethod.m; sourceTree = "<group>"; };
+		EBE5033B2086E86100843D3B /* ClassIvar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassIvar.m; sourceTree = "<group>"; };
+		EBE5033C2086E86200843D3B /* SuperClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperClass.h; sourceTree = "<group>"; };
+		EBE5033D2086E86200843D3B /* ClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassInfo.m; sourceTree = "<group>"; };
+		EBE5033E2086E86200843D3B /* ClassProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassProtocol.m; sourceTree = "<group>"; };
+		EBE5033F2086E86200843D3B /* ClassCreateInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassCreateInstance.h; sourceTree = "<group>"; };
+		EBE503402086E86200843D3B /* ClassCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassCreate.m; sourceTree = "<group>"; };
+		EBE503422086E86200843D3B /* ClassIvar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassIvar.h; sourceTree = "<group>"; };
+		EBE503432086E86200843D3B /* ClassMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassMethod.h; sourceTree = "<group>"; };
+		EBE503442086E86200843D3B /* MetaClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetaClass.m; sourceTree = "<group>"; };
+		EBE503452086E86200843D3B /* ClassProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassProperty.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +135,7 @@
 		EBE5027620844B6500843D3B /* Runtime_Class */ = {
 			isa = PBXGroup;
 			children = (
-				EBE502BD20844FB600843D3B /* Objc_Test */,
+				EBE503312086E86100843D3B /* Class_Test */,
 				EBE502B620844BDB00843D3B /* Class */,
 				EBE5027720844B6500843D3B /* AppDelegate.h */,
 				EBE5027820844B6500843D3B /* AppDelegate.m */,
@@ -190,31 +187,29 @@
 			path = Class;
 			sourceTree = "<group>";
 		};
-		EBE502BD20844FB600843D3B /* Objc_Test */ = {
+		EBE503312086E86100843D3B /* Class_Test */ = {
 			isa = PBXGroup;
 			children = (
-				EBE502BE20844FD800843D3B /* MetaClass.h */,
-				EBE502BF20844FD800843D3B /* MetaClass.m */,
-				EBE502C32084A55200843D3B /* SuperClass.h */,
-				EBE502C42084A55200843D3B /* SuperClass.m */,
-				EBE502C62084A97400843D3B /* ClassInfo.h */,
-				EBE502C72084A97400843D3B /* ClassInfo.m */,
-				EBE502C92084B24700843D3B /* ClassIvar.h */,
-				EBE502CA2084B24700843D3B /* ClassIvar.m */,
-				EBE502CC2084C38200843D3B /* ClassProperty.h */,
-				EBE502CD2084C38200843D3B /* ClassProperty.m */,
-				EBE502CF2084E98D00843D3B /* ClassMethod.h */,
-				EBE502D02084E98D00843D3B /* ClassMethod.m */,
-				EBE502D22085C75100843D3B /* ClassProtocol.h */,
-				EBE502D32085C75100843D3B /* ClassProtocol.m */,
-				EBE502DD208639E200843D3B /* ClassCreate.h */,
-				EBE502DE208639E200843D3B /* ClassCreate.m */,
-				EBE502E020863DB800843D3B /* ClassCreateInstance.h */,
-				EBE502E120863DB800843D3B /* ClassCreateInstance.m */,
-				EBE502E32086DF9D00843D3B /* ClassMRC.h */,
-				EBE502E42086DF9D00843D3B /* ClassMRC.m */,
+				EBE503322086E86100843D3B /* ClassInfo.h */,
+				EBE5033D2086E86200843D3B /* ClassInfo.m */,
+				EBE5033C2086E86200843D3B /* SuperClass.h */,
+				EBE503332086E86100843D3B /* SuperClass.m */,
+				EBE503342086E86100843D3B /* ClassProtocol.h */,
+				EBE5033E2086E86200843D3B /* ClassProtocol.m */,
+				EBE5033F2086E86200843D3B /* ClassCreateInstance.h */,
+				EBE503352086E86100843D3B /* ClassCreateInstance.m */,
+				EBE503372086E86100843D3B /* ClassCreate.h */,
+				EBE503402086E86200843D3B /* ClassCreate.m */,
+				EBE503452086E86200843D3B /* ClassProperty.h */,
+				EBE503382086E86100843D3B /* ClassProperty.m */,
+				EBE503392086E86100843D3B /* MetaClass.h */,
+				EBE503442086E86200843D3B /* MetaClass.m */,
+				EBE503432086E86200843D3B /* ClassMethod.h */,
+				EBE5033A2086E86100843D3B /* ClassMethod.m */,
+				EBE503422086E86200843D3B /* ClassIvar.h */,
+				EBE5033B2086E86100843D3B /* ClassIvar.m */,
 			);
-			path = Objc_Test;
+			path = Class_Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,21 +343,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBE502C82084A97400843D3B /* ClassInfo.m in Sources */,
-				EBE502DF208639E200843D3B /* ClassCreate.m in Sources */,
+				EBE5034C2086E86200843D3B /* ClassInfo.m in Sources */,
 				EBE5027C20844B6500843D3B /* ViewController.m in Sources */,
-				EBE502E220863DB800843D3B /* ClassCreateInstance.m in Sources */,
-				EBE502D42085C75100843D3B /* ClassProtocol.m in Sources */,
+				EBE5034F2086E86200843D3B /* MetaClass.m in Sources */,
+				EBE503492086E86200843D3B /* ClassProperty.m in Sources */,
+				EBE5034B2086E86200843D3B /* ClassIvar.m in Sources */,
+				EBE5034E2086E86200843D3B /* ClassCreate.m in Sources */,
 				EBE502BC20844BFB00843D3B /* Son.m in Sources */,
+				EBE5034A2086E86200843D3B /* ClassMethod.m in Sources */,
 				EBE502B920844BE700843D3B /* Father.m in Sources */,
-				EBE502CB2084B24700843D3B /* ClassIvar.m in Sources */,
+				EBE503472086E86200843D3B /* ClassCreateInstance.m in Sources */,
 				EBE502B420844B9E00843D3B /* main.m in Sources */,
+				EBE5034D2086E86200843D3B /* ClassProtocol.m in Sources */,
+				EBE503462086E86200843D3B /* SuperClass.m in Sources */,
 				EBE5027920844B6500843D3B /* AppDelegate.m in Sources */,
-				EBE502D12084E98D00843D3B /* ClassMethod.m in Sources */,
-				EBE502CE2084C38200843D3B /* ClassProperty.m in Sources */,
-				EBE502C020844FD800843D3B /* MetaClass.m in Sources */,
-				EBE502E52086DF9D00843D3B /* ClassMRC.m in Sources */,
-				EBE502C52084A55200843D3B /* SuperClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
