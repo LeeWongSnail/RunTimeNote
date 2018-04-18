@@ -21,6 +21,7 @@
 		EBE5035D2086E99800843D3B /* Son.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE5035A2086E99800843D3B /* Son.m */; };
 		EBE503632086EDEB00843D3B /* Objcect_Instance_MRC.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE503622086EDEB00843D3B /* Objcect_Instance_MRC.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EBE503662087199300843D3B /* ObjcClass.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE503652087199300843D3B /* ObjcClass.m */; };
+		EBE5036920871C9500843D3B /* Objc_ClassList.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE5036820871C9500843D3B /* Objc_ClassList.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		EBE503622086EDEB00843D3B /* Objcect_Instance_MRC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Objcect_Instance_MRC.m; sourceTree = "<group>"; };
 		EBE503642087199300843D3B /* ObjcClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjcClass.h; sourceTree = "<group>"; };
 		EBE503652087199300843D3B /* ObjcClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjcClass.m; sourceTree = "<group>"; };
+		EBE5036720871C9500843D3B /* Objc_ClassList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Objc_ClassList.h; sourceTree = "<group>"; };
+		EBE5036820871C9500843D3B /* Objc_ClassList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Objc_ClassList.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +170,8 @@
 				EBE503622086EDEB00843D3B /* Objcect_Instance_MRC.m */,
 				EBE503642087199300843D3B /* ObjcClass.h */,
 				EBE503652087199300843D3B /* ObjcClass.m */,
+				EBE5036720871C9500843D3B /* Objc_ClassList.h */,
+				EBE5036820871C9500843D3B /* Objc_ClassList.m */,
 			);
 			path = Objc_Test;
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 				EBE503662087199300843D3B /* ObjcClass.m in Sources */,
 				EBE503632086EDEB00843D3B /* Objcect_Instance_MRC.m in Sources */,
 				EBE503562086E90E00843D3B /* ObjcCreate_MRC.m in Sources */,
+				EBE5036920871C9500843D3B /* Objc_ClassList.m in Sources */,
 				EBE5032F2086E83400843D3B /* main.m in Sources */,
 				EBE502F42086E80F00843D3B /* AppDelegate.m in Sources */,
 				EBE5035C2086E99800843D3B /* Father.m in Sources */,

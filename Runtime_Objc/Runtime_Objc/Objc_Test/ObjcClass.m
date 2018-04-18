@@ -44,7 +44,7 @@
 {
     NSObject *obj = [[NSObject alloc] init];
     //object 需要设置类的对象。 cls 需要设置的类
-    object_setClass(obj, [Father class]));
+    object_setClass(obj, [Father class]);
     NSLog(@"%@",obj);
 }
 

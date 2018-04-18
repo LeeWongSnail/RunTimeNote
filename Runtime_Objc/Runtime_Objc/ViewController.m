@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ObjcCreate_MRC.h"
 #import "Objcect_Instance_MRC.h"
+#import "Objc_ClassList.h"
 #import "ObjcClass.h"
 
 @interface ViewController ()
@@ -43,11 +44,20 @@
     [cls setObjClass];
 }
 
+- (void)objc_classList
+{
+    Objc_ClassList *list = [[Objc_ClassList alloc] init];
+//    [list getClassList];
+//    [list copyClassList];
+//    [list getSpecificClass];
+    [list getMetaClass];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self objc_Class];
+    [self objc_classList];
 }
 
 
