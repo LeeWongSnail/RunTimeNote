@@ -11,10 +11,13 @@
 #import "ClassIvar.h"
 #import "MetaClass.h"
 #import "SuperClass.h"
+#import "ClassCreate.h"
 #import "ClassProperty.h"
 #import "ClassProtocol.h"
+#import "ClassCreateInstance.h"
 #import "ClassMethod.h"
 #import "ClassInfo.h"
+#import "ClassMRC.h"
 #import "Father.h"
 #import "Son.h"
 
@@ -95,15 +98,33 @@
 - (void)protocol_getProtocolList
 {
     ClassProtocol *p = [[ClassProtocol alloc] init];
-//    [p copyProtocolList];
 //    [p classConformsProtocol];
     [p addProtocol];
+}
+
+- (void)createClass
+{
+    ClassCreate *create = [[ClassCreate alloc] init];
+    [create createNewClassInRuntime];
+}
+
+- (void)clsCreateInstance
+{
+    ClassCreateInstance *ins = [[ClassCreateInstance alloc] init];
+    [ins createInstance];
+}
+
+- (void)MRC_Test
+{
+    ClassMRC *mrc = [[ClassMRC alloc] init];
+//    [mrc createInstance];
+    [mrc class_destoryInstance];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self protocol_getProtocolList];
+    [self MRC_Test];
 }
 
 

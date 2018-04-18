@@ -46,6 +46,7 @@
         Ivar var = vars[i];
         NSLog(@"ivar name = %s  ivar type = %s",ivar_getName(var),ivar_getTypeEncoding(var));
     }
+    free(vars);
 }
 
 
@@ -70,6 +71,7 @@
         Ivar var = vars[i];
         NSLog(@"ivar name = %s  ivar type = %s",ivar_getName(var),ivar_getTypeEncoding(var));
     }
+    free(vars);
 }
 
 @end

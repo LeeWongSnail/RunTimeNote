@@ -42,6 +42,7 @@
         objc_property_t prop = props[i];
         NSLog(@"ivar name = %s  ivar type = %s",property_getName(prop),property_getAttributes(prop));
     }
+    free(props);
 }
 
 
