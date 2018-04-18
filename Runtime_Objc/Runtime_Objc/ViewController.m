@@ -7,25 +7,47 @@
 //
 
 #import "ViewController.h"
-#import "ClassMRC.h"
+#import "ObjcCreate_MRC.h"
+#import "Objcect_Instance_MRC.h"
+#import "ObjcClass.h"
 
 @interface ViewController ()
-
 @end
 
 @implementation ViewController
 
 - (void)objc_mrcTest
 {
-    ClassMRC *mrc = [[ClassMRC alloc] init];
+    ObjcCreate_MRC *mrc = [[ObjcCreate_MRC alloc] init];
 //    [mrc createInstance];
-    [mrc class_destoryInstance];
+//    [mrc class_destoryInstance];
+    
+    [mrc copyAtoBWithClass];
+}
+
+- (void)object_method
+{
+    Objcect_Instance_MRC *mrc = [[Objcect_Instance_MRC alloc] init];
+//    [mrc setInstanceValue];
+//    [mrc getInstanceValue];
+//    [mrc getIvarAtIndex];
+//    [mrc getIvarValue];
+    [mrc setIvarValue];
+}
+
+- (void)objc_Class
+{
+    ObjcClass *cls = [[ObjcClass alloc] init];
+//    [cls getClassName];
+//    [cls getClass];
+    [cls setObjClass];
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self objc_Class];
 }
 
 

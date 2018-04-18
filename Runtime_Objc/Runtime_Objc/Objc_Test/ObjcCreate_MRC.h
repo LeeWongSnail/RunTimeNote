@@ -11,7 +11,8 @@
 
 //这个类主要是针对一些只能在MRC环境下使用的方法
 
-@interface ClassMRC : NSObject
+@interface ObjcCreate_MRC : NSObject
 - (id)createInstance;
 - (void)class_destoryInstance;
+- (void)copyAtoBWithClass;
 @end

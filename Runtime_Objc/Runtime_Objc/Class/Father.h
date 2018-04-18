@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Father : NSObject
-@property (nonatomic, strong) NSString *name;
+@property (nonatomic, copy) NSString *name;
 
 
 - (void)eat;
