@@ -14,6 +14,11 @@
 		EBA925B020876927005871C2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBA925AB20876927005871C2 /* Info.plist */; };
 		EBA925B62087695B005871C2 /* Father.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA925B32087695B005871C2 /* Father.m */; };
 		EBA925B72087695B005871C2 /* Son.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA925B42087695B005871C2 /* Son.m */; };
+		EBA925BB208783A3005871C2 /* TypeEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA925BA208783A3005871C2 /* TypeEncoding.m */; };
+		EBA925BE2087853A005871C2 /* Objc_Ivar.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA925BD2087853A005871C2 /* Objc_Ivar.m */; };
+		EBA925C1208788E6005871C2 /* Objc_Property.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA925C0208788E6005871C2 /* Objc_Property.m */; };
+		EBA925C420878B50005871C2 /* AssociatedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA925C320878B50005871C2 /* AssociatedObject.m */; };
+		EBA925C720878D1D005871C2 /* DataMap.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA925C620878D1D005871C2 /* DataMap.m */; };
 		EBE503A6208768EF00843D3B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE503A5208768EF00843D3B /* AppDelegate.m */; };
 		EBE503A9208768EF00843D3B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE503A8208768EF00843D3B /* ViewController.m */; };
 		EBE503BE208768F000843D3B /* Runtime_IvarAndPropertyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE503BD208768F000843D3B /* Runtime_IvarAndPropertyTests.m */; };
@@ -47,6 +52,16 @@
 		EBA925B32087695B005871C2 /* Father.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Father.m; sourceTree = "<group>"; };
 		EBA925B42087695B005871C2 /* Son.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Son.m; sourceTree = "<group>"; };
 		EBA925B52087695B005871C2 /* Father.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Father.h; sourceTree = "<group>"; };
+		EBA925B9208783A3005871C2 /* TypeEncoding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypeEncoding.h; sourceTree = "<group>"; };
+		EBA925BA208783A3005871C2 /* TypeEncoding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TypeEncoding.m; sourceTree = "<group>"; };
+		EBA925BC2087853A005871C2 /* Objc_Ivar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Objc_Ivar.h; sourceTree = "<group>"; };
+		EBA925BD2087853A005871C2 /* Objc_Ivar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Objc_Ivar.m; sourceTree = "<group>"; };
+		EBA925BF208788E6005871C2 /* Objc_Property.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Objc_Property.h; sourceTree = "<group>"; };
+		EBA925C0208788E6005871C2 /* Objc_Property.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Objc_Property.m; sourceTree = "<group>"; };
+		EBA925C220878B50005871C2 /* AssociatedObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssociatedObject.h; sourceTree = "<group>"; };
+		EBA925C320878B50005871C2 /* AssociatedObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssociatedObject.m; sourceTree = "<group>"; };
+		EBA925C520878D1D005871C2 /* DataMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataMap.h; sourceTree = "<group>"; };
+		EBA925C620878D1D005871C2 /* DataMap.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataMap.m; sourceTree = "<group>"; };
 		EBE503A1208768EF00843D3B /* Runtime_IvarAndProperty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runtime_IvarAndProperty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE503A4208768EF00843D3B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EBE503A5208768EF00843D3B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -101,9 +116,9 @@
 			isa = PBXGroup;
 			children = (
 				EBA925B22087695B005871C2 /* Son.h */,
-				EBA925B32087695B005871C2 /* Father.m */,
 				EBA925B42087695B005871C2 /* Son.m */,
 				EBA925B52087695B005871C2 /* Father.h */,
+				EBA925B32087695B005871C2 /* Father.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -111,6 +126,16 @@
 		EBA925B82087697F005871C2 /* IvarPropertyTest */ = {
 			isa = PBXGroup;
 			children = (
+				EBA925B9208783A3005871C2 /* TypeEncoding.h */,
+				EBA925BA208783A3005871C2 /* TypeEncoding.m */,
+				EBA925BC2087853A005871C2 /* Objc_Ivar.h */,
+				EBA925BD2087853A005871C2 /* Objc_Ivar.m */,
+				EBA925BF208788E6005871C2 /* Objc_Property.h */,
+				EBA925C0208788E6005871C2 /* Objc_Property.m */,
+				EBA925C220878B50005871C2 /* AssociatedObject.h */,
+				EBA925C320878B50005871C2 /* AssociatedObject.m */,
+				EBA925C520878D1D005871C2 /* DataMap.h */,
+				EBA925C620878D1D005871C2 /* DataMap.m */,
 			);
 			path = IvarPropertyTest;
 			sourceTree = "<group>";
@@ -302,7 +327,12 @@
 				EBA925B72087695B005871C2 /* Son.m in Sources */,
 				EBA925B62087695B005871C2 /* Father.m in Sources */,
 				EBA925AF20876927005871C2 /* main.m in Sources */,
+				EBA925C1208788E6005871C2 /* Objc_Property.m in Sources */,
+				EBA925BB208783A3005871C2 /* TypeEncoding.m in Sources */,
 				EBE503A6208768EF00843D3B /* AppDelegate.m in Sources */,
+				EBA925C420878B50005871C2 /* AssociatedObject.m in Sources */,
+				EBA925C720878D1D005871C2 /* DataMap.m in Sources */,
+				EBA925BE2087853A005871C2 /* Objc_Ivar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
