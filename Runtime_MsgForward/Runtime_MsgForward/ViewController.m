@@ -9,6 +9,10 @@
 #import "ViewController.h"
 #import "ResolveMethod.h"
 #import "ForwardTarget.h"
+#import "ForwardInvocation.h"
+#import "MultipleInheritance.h"
+
+#import "SomeClass.h"
 
 @interface ViewController ()
 
@@ -31,10 +35,45 @@
     [ForwardTarget noIMPClassMethod];
 }
 
+- (void)invokeWithInvocation
+{
+    ForwardInvocation *invo = [[ForwardInvocation alloc] init];
+//    [invo noIMPInstanceMethod];
+    [ForwardInvocation noIMPClassMethod];
+}
+
+
+/**
+ 模拟多继承
+ */
+- (void)multiInherit
+{
+    MultipleInheritance *mh = [[MultipleInheritance alloc] init];
+    [mh eat];
+    
+    if ([mh isKindOfClass:[SomeClass class]]) {
+        NSLog(@"mh 是 SomeClass 类型的");
+    }
+    
+    if ([mh isKindOfClass:[Father class]]) {
+        NSLog(@"mh 是 Father 类型的");
+    }
+    
+    if ([mh respondsToSelector:@selector(drink)]) {
+        NSLog(@"mh 实现了drink方法");
+        [mh performSelector:@selector(drink)];
+    }
+    
+    if ([mh respondsToSelector:@selector(eat)]) {
+        NSLog(@"mh 实现了eat方法");
+        [mh performSelector:@selector(eat)];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self forwardTarget];
+    [self multiInherit];
 }
 
 

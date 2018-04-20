@@ -10,7 +10,7 @@
 
 @implementation SomeClass
 
-- (void)eat
+- (void)drink
 {
     NSLog(@"%s",__func__);
 }

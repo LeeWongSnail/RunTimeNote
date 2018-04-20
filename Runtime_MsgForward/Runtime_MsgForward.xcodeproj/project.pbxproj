@@ -22,6 +22,7 @@
 		EBA926E52089CF07005871C2 /* ResolveMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA926E42089CF07005871C2 /* ResolveMethod.m */; };
 		EBA926E82089D7BE005871C2 /* ForwardTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA926E72089D7BE005871C2 /* ForwardTarget.m */; };
 		EBA926EB2089DE1F005871C2 /* ForwardInvocation.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA926EA2089DE1F005871C2 /* ForwardInvocation.m */; };
+		EBA926EE2089E3D6005871C2 /* MultipleInheritance.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA926ED2089E3D6005871C2 /* MultipleInheritance.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		EBA926E72089D7BE005871C2 /* ForwardTarget.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForwardTarget.m; sourceTree = "<group>"; };
 		EBA926E92089DE1F005871C2 /* ForwardInvocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForwardInvocation.h; sourceTree = "<group>"; };
 		EBA926EA2089DE1F005871C2 /* ForwardInvocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForwardInvocation.m; sourceTree = "<group>"; };
+		EBA926EC2089E3D6005871C2 /* MultipleInheritance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultipleInheritance.h; sourceTree = "<group>"; };
+		EBA926ED2089E3D6005871C2 /* MultipleInheritance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultipleInheritance.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,11 +168,11 @@
 			isa = PBXGroup;
 			children = (
 				EBA926D92089CE82005871C2 /* Son.h */,
-				EBA926DA2089CE82005871C2 /* Father.m */,
-				EBA926DB2089CE82005871C2 /* SomeClass.m */,
 				EBA926DC2089CE82005871C2 /* Son.m */,
-				EBA926DD2089CE82005871C2 /* SomeClass.h */,
 				EBA926DE2089CE82005871C2 /* Father.h */,
+				EBA926DA2089CE82005871C2 /* Father.m */,
+				EBA926DD2089CE82005871C2 /* SomeClass.h */,
+				EBA926DB2089CE82005871C2 /* SomeClass.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -183,6 +186,8 @@
 				EBA926E72089D7BE005871C2 /* ForwardTarget.m */,
 				EBA926E92089DE1F005871C2 /* ForwardInvocation.h */,
 				EBA926EA2089DE1F005871C2 /* ForwardInvocation.m */,
+				EBA926EC2089E3D6005871C2 /* MultipleInheritance.h */,
+				EBA926ED2089E3D6005871C2 /* MultipleInheritance.m */,
 			);
 			path = Runtime;
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 			files = (
 				EBA926E22089CE82005871C2 /* Son.m in Sources */,
 				EBA9269E2089CDC6005871C2 /* ViewController.m in Sources */,
+				EBA926EE2089E3D6005871C2 /* MultipleInheritance.m in Sources */,
 				EBA926E12089CE82005871C2 /* SomeClass.m in Sources */,
 				EBA926E02089CE82005871C2 /* Father.m in Sources */,
 				EBA926E52089CF07005871C2 /* ResolveMethod.m in Sources */,

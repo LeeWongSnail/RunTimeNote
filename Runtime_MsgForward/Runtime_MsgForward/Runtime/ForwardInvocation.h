@@ -9,5 +9,14 @@
 #import <Foundation/Foundation.h>
 
 @interface ForwardInvocation : NSObject
+//一个只有声明没有实现的方法
+- (void)noIMPInstanceMethod;
++ (void)noIMPClassMethod;
+@end
 
+
+@interface ForwardInvocationBak : NSObject
+//一个只有声明没有实现的方法
+- (void)noIMPInstanceMethod;
++ (void)noIMPClassMethod;
 @end

@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface SomeClass : NSObject
-- (void)eat;
+- (void)drink;
 @end
