@@ -19,6 +19,7 @@
 		EBA926E02089CE82005871C2 /* Father.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA926DA2089CE82005871C2 /* Father.m */; };
 		EBA926E12089CE82005871C2 /* SomeClass.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA926DB2089CE82005871C2 /* SomeClass.m */; };
 		EBA926E22089CE82005871C2 /* Son.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA926DC2089CE82005871C2 /* Son.m */; };
+		EBA926E52089CF07005871C2 /* ResolveMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA926E42089CF07005871C2 /* ResolveMethod.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		EBA926DC2089CE82005871C2 /* Son.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Son.m; sourceTree = "<group>"; };
 		EBA926DD2089CE82005871C2 /* SomeClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomeClass.h; sourceTree = "<group>"; };
 		EBA926DE2089CE82005871C2 /* Father.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Father.h; sourceTree = "<group>"; };
+		EBA926E32089CF07005871C2 /* ResolveMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResolveMethod.h; sourceTree = "<group>"; };
+		EBA926E42089CF07005871C2 /* ResolveMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResolveMethod.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +171,8 @@
 		EBA926DF2089CE82005871C2 /* Runtime */ = {
 			isa = PBXGroup;
 			children = (
+				EBA926E32089CF07005871C2 /* ResolveMethod.h */,
+				EBA926E42089CF07005871C2 /* ResolveMethod.m */,
 			);
 			path = Runtime;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 				EBA9269E2089CDC6005871C2 /* ViewController.m in Sources */,
 				EBA926E12089CE82005871C2 /* SomeClass.m in Sources */,
 				EBA926E02089CE82005871C2 /* Father.m in Sources */,
+				EBA926E52089CF07005871C2 /* ResolveMethod.m in Sources */,
 				EBA926D62089CDFA005871C2 /* main.m in Sources */,
 				EBA9269B2089CDC6005871C2 /* AppDelegate.m in Sources */,
 			);

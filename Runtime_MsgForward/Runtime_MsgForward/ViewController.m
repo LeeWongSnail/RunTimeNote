@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ResolveMethod.h"
 
 @interface ViewController ()
 
@@ -14,9 +15,18 @@
 
 @implementation ViewController
 
+
+- (void)resolveMethod
+{
+    ResolveMethod *method = [[ResolveMethod alloc] init];
+    [method noIMPInstanceMethod];
+    [ResolveMethod noIMPClassMethod];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self resolveMethod];
 }
 
 
