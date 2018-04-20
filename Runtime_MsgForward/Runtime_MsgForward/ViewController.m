@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "ResolveMethod.h"
+#import "ForwardTarget.h"
 
 @interface ViewController ()
 
@@ -23,10 +24,17 @@
     [ResolveMethod noIMPClassMethod];
 }
 
+- (void)forwardTarget
+{
+    ForwardTarget *target = [[ForwardTarget alloc] init];
+//    [target noIMPInstanceMethod];
+    [ForwardTarget noIMPClassMethod];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self resolveMethod];
+    [self forwardTarget];
 }
 
 

@@ -20,6 +20,8 @@
 		EBA926E12089CE82005871C2 /* SomeClass.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA926DB2089CE82005871C2 /* SomeClass.m */; };
 		EBA926E22089CE82005871C2 /* Son.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA926DC2089CE82005871C2 /* Son.m */; };
 		EBA926E52089CF07005871C2 /* ResolveMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA926E42089CF07005871C2 /* ResolveMethod.m */; };
+		EBA926E82089D7BE005871C2 /* ForwardTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA926E72089D7BE005871C2 /* ForwardTarget.m */; };
+		EBA926EB2089DE1F005871C2 /* ForwardInvocation.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA926EA2089DE1F005871C2 /* ForwardInvocation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,10 @@
 		EBA926DE2089CE82005871C2 /* Father.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Father.h; sourceTree = "<group>"; };
 		EBA926E32089CF07005871C2 /* ResolveMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResolveMethod.h; sourceTree = "<group>"; };
 		EBA926E42089CF07005871C2 /* ResolveMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResolveMethod.m; sourceTree = "<group>"; };
+		EBA926E62089D7BE005871C2 /* ForwardTarget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForwardTarget.h; sourceTree = "<group>"; };
+		EBA926E72089D7BE005871C2 /* ForwardTarget.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForwardTarget.m; sourceTree = "<group>"; };
+		EBA926E92089DE1F005871C2 /* ForwardInvocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForwardInvocation.h; sourceTree = "<group>"; };
+		EBA926EA2089DE1F005871C2 /* ForwardInvocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForwardInvocation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +179,10 @@
 			children = (
 				EBA926E32089CF07005871C2 /* ResolveMethod.h */,
 				EBA926E42089CF07005871C2 /* ResolveMethod.m */,
+				EBA926E62089D7BE005871C2 /* ForwardTarget.h */,
+				EBA926E72089D7BE005871C2 /* ForwardTarget.m */,
+				EBA926E92089DE1F005871C2 /* ForwardInvocation.h */,
+				EBA926EA2089DE1F005871C2 /* ForwardInvocation.m */,
 			);
 			path = Runtime;
 			sourceTree = "<group>";
@@ -314,6 +324,8 @@
 				EBA926E02089CE82005871C2 /* Father.m in Sources */,
 				EBA926E52089CF07005871C2 /* ResolveMethod.m in Sources */,
 				EBA926D62089CDFA005871C2 /* main.m in Sources */,
+				EBA926E82089D7BE005871C2 /* ForwardTarget.m in Sources */,
+				EBA926EB2089DE1F005871C2 /* ForwardInvocation.m in Sources */,
 				EBA9269B2089CDC6005871C2 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
