@@ -18,6 +18,11 @@
 		EBA92675208984CC005871C2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBA92670208984CC005871C2 /* Info.plist */; };
 		EBA9267C20898727005871C2 /* Father.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA9267920898726005871C2 /* Father.m */; };
 		EBA9267D20898727005871C2 /* Son.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA9267A20898726005871C2 /* Son.m */; };
+		EBA926802089875D005871C2 /* Runtime_SEL.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA9267F2089875D005871C2 /* Runtime_SEL.m */; };
+		EBA9268320898AFA005871C2 /* Runtime_IMP.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA9268220898AFA005871C2 /* Runtime_IMP.m */; };
+		EBA9268620898B9F005871C2 /* Runtime_Method.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA9268520898B9F005871C2 /* Runtime_Method.m */; };
+		EBA926892089C166005871C2 /* SomeClass.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA926882089C166005871C2 /* SomeClass.m */; };
+		EBA9268C2089C466005871C2 /* Runtime_MsgSend.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA9268B2089C466005871C2 /* Runtime_MsgSend.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +63,16 @@
 		EBA9267920898726005871C2 /* Father.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Father.m; sourceTree = "<group>"; };
 		EBA9267A20898726005871C2 /* Son.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Son.m; sourceTree = "<group>"; };
 		EBA9267B20898726005871C2 /* Father.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Father.h; sourceTree = "<group>"; };
+		EBA9267E2089875D005871C2 /* Runtime_SEL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Runtime_SEL.h; sourceTree = "<group>"; };
+		EBA9267F2089875D005871C2 /* Runtime_SEL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Runtime_SEL.m; sourceTree = "<group>"; };
+		EBA9268120898AFA005871C2 /* Runtime_IMP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Runtime_IMP.h; sourceTree = "<group>"; };
+		EBA9268220898AFA005871C2 /* Runtime_IMP.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Runtime_IMP.m; sourceTree = "<group>"; };
+		EBA9268420898B9F005871C2 /* Runtime_Method.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Runtime_Method.h; sourceTree = "<group>"; };
+		EBA9268520898B9F005871C2 /* Runtime_Method.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Runtime_Method.m; sourceTree = "<group>"; };
+		EBA926872089C166005871C2 /* SomeClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SomeClass.h; sourceTree = "<group>"; };
+		EBA926882089C166005871C2 /* SomeClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SomeClass.m; sourceTree = "<group>"; };
+		EBA9268A2089C466005871C2 /* Runtime_MsgSend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Runtime_MsgSend.h; sourceTree = "<group>"; };
+		EBA9268B2089C466005871C2 /* Runtime_MsgSend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Runtime_MsgSend.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +167,14 @@
 		EBA9267620898726005871C2 /* Runtime */ = {
 			isa = PBXGroup;
 			children = (
+				EBA9267E2089875D005871C2 /* Runtime_SEL.h */,
+				EBA9267F2089875D005871C2 /* Runtime_SEL.m */,
+				EBA9268120898AFA005871C2 /* Runtime_IMP.h */,
+				EBA9268220898AFA005871C2 /* Runtime_IMP.m */,
+				EBA9268420898B9F005871C2 /* Runtime_Method.h */,
+				EBA9268520898B9F005871C2 /* Runtime_Method.m */,
+				EBA9268A2089C466005871C2 /* Runtime_MsgSend.h */,
+				EBA9268B2089C466005871C2 /* Runtime_MsgSend.m */,
 			);
 			path = Runtime;
 			sourceTree = "<group>";
@@ -160,9 +183,11 @@
 			isa = PBXGroup;
 			children = (
 				EBA9267820898726005871C2 /* Son.h */,
-				EBA9267920898726005871C2 /* Father.m */,
 				EBA9267A20898726005871C2 /* Son.m */,
+				EBA9267920898726005871C2 /* Father.m */,
 				EBA9267B20898726005871C2 /* Father.h */,
+				EBA926872089C166005871C2 /* SomeClass.h */,
+				EBA926882089C166005871C2 /* SomeClass.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -299,10 +324,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBA9263C20898446005871C2 /* ViewController.m in Sources */,
+				EBA926802089875D005871C2 /* Runtime_SEL.m in Sources */,
 				EBA9267D20898727005871C2 /* Son.m in Sources */,
+				EBA9268320898AFA005871C2 /* Runtime_IMP.m in Sources */,
 				EBA9267C20898727005871C2 /* Father.m in Sources */,
 				EBA92674208984CC005871C2 /* main.m in Sources */,
+				EBA9268C2089C466005871C2 /* Runtime_MsgSend.m in Sources */,
 				EBA9263920898446005871C2 /* AppDelegate.m in Sources */,
+				EBA926892089C166005871C2 /* SomeClass.m in Sources */,
+				EBA9268620898B9F005871C2 /* Runtime_Method.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +503,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Runtime_MsgSend/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -490,6 +521,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Runtime_MsgSend/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
