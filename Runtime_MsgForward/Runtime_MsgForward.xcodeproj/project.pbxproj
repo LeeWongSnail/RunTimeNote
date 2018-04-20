@@ -16,6 +16,9 @@
 		EBA926D52089CDFA005871C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA926CF2089CDFA005871C2 /* Main.storyboard */; };
 		EBA926D62089CDFA005871C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA926D12089CDFA005871C2 /* main.m */; };
 		EBA926D72089CDFA005871C2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBA926D22089CDFA005871C2 /* Info.plist */; };
+		EBA926E02089CE82005871C2 /* Father.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA926DA2089CE82005871C2 /* Father.m */; };
+		EBA926E12089CE82005871C2 /* SomeClass.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA926DB2089CE82005871C2 /* SomeClass.m */; };
+		EBA926E22089CE82005871C2 /* Son.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA926DC2089CE82005871C2 /* Son.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,12 @@
 		EBA926D02089CDFA005871C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBA926D12089CDFA005871C2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EBA926D22089CDFA005871C2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBA926D92089CE82005871C2 /* Son.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Son.h; sourceTree = "<group>"; };
+		EBA926DA2089CE82005871C2 /* Father.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Father.m; sourceTree = "<group>"; };
+		EBA926DB2089CE82005871C2 /* SomeClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomeClass.m; sourceTree = "<group>"; };
+		EBA926DC2089CE82005871C2 /* Son.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Son.m; sourceTree = "<group>"; };
+		EBA926DD2089CE82005871C2 /* SomeClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomeClass.h; sourceTree = "<group>"; };
+		EBA926DE2089CE82005871C2 /* Father.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Father.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,11 +111,13 @@
 		EBA926982089CDC6005871C2 /* Runtime_MsgForward */ = {
 			isa = PBXGroup;
 			children = (
-				EBA926CB2089CDFA005871C2 /* Supporting Files */,
+				EBA926D82089CE82005871C2 /* Class */,
+				EBA926DF2089CE82005871C2 /* Runtime */,
 				EBA926992089CDC6005871C2 /* AppDelegate.h */,
 				EBA9269A2089CDC6005871C2 /* AppDelegate.m */,
 				EBA9269C2089CDC6005871C2 /* ViewController.h */,
 				EBA9269D2089CDC6005871C2 /* ViewController.m */,
+				EBA926CB2089CDFA005871C2 /* Supporting Files */,
 			);
 			path = Runtime_MsgForward;
 			sourceTree = "<group>";
@@ -139,6 +150,26 @@
 				EBA926D22089CDFA005871C2 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EBA926D82089CE82005871C2 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				EBA926D92089CE82005871C2 /* Son.h */,
+				EBA926DA2089CE82005871C2 /* Father.m */,
+				EBA926DB2089CE82005871C2 /* SomeClass.m */,
+				EBA926DC2089CE82005871C2 /* Son.m */,
+				EBA926DD2089CE82005871C2 /* SomeClass.h */,
+				EBA926DE2089CE82005871C2 /* Father.h */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		EBA926DF2089CE82005871C2 /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Runtime;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,7 +303,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBA926E22089CE82005871C2 /* Son.m in Sources */,
 				EBA9269E2089CDC6005871C2 /* ViewController.m in Sources */,
+				EBA926E12089CE82005871C2 /* SomeClass.m in Sources */,
+				EBA926E02089CE82005871C2 /* Father.m in Sources */,
 				EBA926D62089CDFA005871C2 /* main.m in Sources */,
 				EBA9269B2089CDC6005871C2 /* AppDelegate.m in Sources */,
 			);
