@@ -29,8 +29,6 @@
 //}
 
 
-
-
 /**
  适合于在类似于for循环这种情况下频繁调用同一方法，以提高性能的情况。另外，methodForSelector:是由Cocoa运行时提供的；它不是Objective-C语言的特性。
  NSObject类提供了methodForSelector:方法，让我们可以获取到方法的指针，然后通过这个指针来调用实现代码
@@ -39,6 +37,7 @@
 {
     void (*setter)(id, SEL, BOOL);
     int i;
+    //快速执行多次同一个方法
     setter = (void (*)(id, SEL, BOOL))[self methodForSelector:@selector(method)];
     for (i = 0 ; i < 1000 ; i++)
         setter(self, @selector(method), YES);
