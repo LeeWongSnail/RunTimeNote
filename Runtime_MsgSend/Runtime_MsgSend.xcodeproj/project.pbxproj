@@ -16,6 +16,8 @@
 		EBA92673208984CC005871C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA9266D208984CC005871C2 /* Main.storyboard */; };
 		EBA92674208984CC005871C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA9266F208984CC005871C2 /* main.m */; };
 		EBA92675208984CC005871C2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBA92670208984CC005871C2 /* Info.plist */; };
+		EBA9267C20898727005871C2 /* Father.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA9267920898726005871C2 /* Father.m */; };
+		EBA9267D20898727005871C2 /* Son.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA9267A20898726005871C2 /* Son.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,10 @@
 		EBA9266E208984CC005871C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBA9266F208984CC005871C2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EBA92670208984CC005871C2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBA9267820898726005871C2 /* Son.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Son.h; sourceTree = "<group>"; };
+		EBA9267920898726005871C2 /* Father.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Father.m; sourceTree = "<group>"; };
+		EBA9267A20898726005871C2 /* Son.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Son.m; sourceTree = "<group>"; };
+		EBA9267B20898726005871C2 /* Father.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Father.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,8 @@
 		EBA9263620898446005871C2 /* Runtime_MsgSend */ = {
 			isa = PBXGroup;
 			children = (
+				EBA9267720898726005871C2 /* Class */,
+				EBA9267620898726005871C2 /* Runtime */,
 				EBA9263720898446005871C2 /* AppDelegate.h */,
 				EBA9263820898446005871C2 /* AppDelegate.m */,
 				EBA9263A20898446005871C2 /* ViewController.h */,
@@ -139,6 +147,24 @@
 				EBA92670208984CC005871C2 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EBA9267620898726005871C2 /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Runtime;
+			sourceTree = "<group>";
+		};
+		EBA9267720898726005871C2 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				EBA9267820898726005871C2 /* Son.h */,
+				EBA9267920898726005871C2 /* Father.m */,
+				EBA9267A20898726005871C2 /* Son.m */,
+				EBA9267B20898726005871C2 /* Father.h */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +299,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBA9263C20898446005871C2 /* ViewController.m in Sources */,
+				EBA9267D20898727005871C2 /* Son.m in Sources */,
+				EBA9267C20898727005871C2 /* Father.m in Sources */,
 				EBA92674208984CC005871C2 /* main.m in Sources */,
 				EBA9263920898446005871C2 /* AppDelegate.m in Sources */,
 			);
