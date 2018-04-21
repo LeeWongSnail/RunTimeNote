@@ -16,6 +16,9 @@
 		EBA92787208B1216005871C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA92781208B1216005871C2 /* Main.storyboard */; };
 		EBA92788208B1216005871C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA92783208B1216005871C2 /* main.m */; };
 		EBA92789208B1216005871C2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBA92784208B1216005871C2 /* Info.plist */; };
+		EBA9278E208B1297005871C2 /* Runtime_Category.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA9278D208B1297005871C2 /* Runtime_Category.m */; };
+		EBA92791208B12E9005871C2 /* Category+Demo.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA92790208B12E9005871C2 /* Category+Demo.m */; };
+		EBA92794208B1346005871C2 /* Runtime_Protocol.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA92793208B1346005871C2 /* Runtime_Protocol.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,12 @@
 		EBA92782208B1216005871C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBA92783208B1216005871C2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EBA92784208B1216005871C2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBA9278C208B1297005871C2 /* Runtime_Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Runtime_Category.h; sourceTree = "<group>"; };
+		EBA9278D208B1297005871C2 /* Runtime_Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Runtime_Category.m; sourceTree = "<group>"; };
+		EBA9278F208B12E9005871C2 /* Category+Demo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Category+Demo.h"; sourceTree = "<group>"; };
+		EBA92790208B12E9005871C2 /* Category+Demo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Category+Demo.m"; sourceTree = "<group>"; };
+		EBA92792208B1346005871C2 /* Runtime_Protocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Runtime_Protocol.h; sourceTree = "<group>"; };
+		EBA92793208B1346005871C2 /* Runtime_Protocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Runtime_Protocol.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +111,8 @@
 		EBA9274A208B11A6005871C2 /* Runtime_ProtocolCategory */ = {
 			isa = PBXGroup;
 			children = (
+				EBA9278B208B126D005871C2 /* Category */,
+				EBA9278A208B126D005871C2 /* Protocol */,
 				EBA9274B208B11A6005871C2 /* AppDelegate.h */,
 				EBA9274C208B11A6005871C2 /* AppDelegate.m */,
 				EBA9274E208B11A6005871C2 /* ViewController.h */,
@@ -139,6 +150,26 @@
 				EBA92784208B1216005871C2 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EBA9278A208B126D005871C2 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				EBA92792208B1346005871C2 /* Runtime_Protocol.h */,
+				EBA92793208B1346005871C2 /* Runtime_Protocol.m */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		EBA9278B208B126D005871C2 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				EBA9278C208B1297005871C2 /* Runtime_Category.h */,
+				EBA9278D208B1297005871C2 /* Runtime_Category.m */,
+				EBA9278F208B12E9005871C2 /* Category+Demo.h */,
+				EBA92790208B12E9005871C2 /* Category+Demo.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,9 +303,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBA92791208B12E9005871C2 /* Category+Demo.m in Sources */,
 				EBA92750208B11A6005871C2 /* ViewController.m in Sources */,
 				EBA92788208B1216005871C2 /* main.m in Sources */,
 				EBA9274D208B11A6005871C2 /* AppDelegate.m in Sources */,
+				EBA9278E208B1297005871C2 /* Runtime_Category.m in Sources */,
+				EBA92794208B1346005871C2 /* Runtime_Protocol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

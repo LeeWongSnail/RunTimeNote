@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "Runtime_Category.h"
+#import "Category+Demo.h"
+#import "Runtime_Protocol.h"
 
 @interface ViewController ()
 
@@ -14,9 +17,33 @@
 
 @implementation ViewController
 
+- (void)categoryTest
+{
+    Runtime_Category *cate = [[Runtime_Category alloc] init];
+//    [cate getInstanceMethods];
+    
+    [cate getClassMethods];
+}
+
+
+- (void)protocol_test
+{
+    Runtime_Protocol *prop = [[Runtime_Protocol alloc] init];
+//    [prop getProtocol];
+//    [prop getProtocolList];
+//    [prop addProtocolDurRuntime];
+//    [prop copyProtocolPropertyList];
+//    [prop getSpecificProperty];
+    
+    [prop protocolConformProtocol];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [self protocol_test];
+    
 }
 
 
