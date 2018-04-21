@@ -16,6 +16,7 @@
 		EBA927392089E902005871C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA927332089E902005871C2 /* Main.storyboard */; };
 		EBA9273A2089E902005871C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA927352089E902005871C2 /* main.m */; };
 		EBA9273B2089E902005871C2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBA927362089E902005871C2 /* Info.plist */; };
+		EBA9273E2089EB73005871C2 /* ViewController+Tracking.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA9273D2089EB73005871C2 /* ViewController+Tracking.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		EBA927342089E902005871C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBA927352089E902005871C2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EBA927362089E902005871C2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBA9273C2089EB73005871C2 /* ViewController+Tracking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController+Tracking.h"; sourceTree = "<group>"; };
+		EBA9273D2089EB73005871C2 /* ViewController+Tracking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController+Tracking.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,8 @@
 				EBA926FC2089E8B1005871C2 /* AppDelegate.m */,
 				EBA926FE2089E8B1005871C2 /* ViewController.h */,
 				EBA926FF2089E8B1005871C2 /* ViewController.m */,
+				EBA9273C2089EB73005871C2 /* ViewController+Tracking.h */,
+				EBA9273D2089EB73005871C2 /* ViewController+Tracking.m */,
 				EBA9272F2089E902005871C2 /* Supporting Files */,
 			);
 			path = Runtime_MethodSwizzling;
@@ -273,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBA927002089E8B1005871C2 /* ViewController.m in Sources */,
+				EBA9273E2089EB73005871C2 /* ViewController+Tracking.m in Sources */,
 				EBA9273A2089E902005871C2 /* main.m in Sources */,
 				EBA926FD2089E8B1005871C2 /* AppDelegate.m in Sources */,
 			);
