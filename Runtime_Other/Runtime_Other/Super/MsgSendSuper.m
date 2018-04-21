@@ -32,17 +32,19 @@ objc中super是编译器标示符，并不像self一样是一个对象，遇到�
 
 /**
  模拟 [super someInstanceMethod]的调用过程
+ 如果要看这个方法的运行过程 请在buildsetting中
+ 将Enable Strict Checking of objc_msgSend Calls改为NO
  */
-- (void)someInstanceMethod
-{
-    struct objc_super superclass = {
-        .receiver    = self,    //方法的接受者 这个表明 调用这个方法最终的接受者 还是当前类
-        .super_class = class_getSuperclass(object_getClass(self))
-    };
-    //从objc_super结构体指向的superClass的方法列表开始查找viewDidLoad的selector，找到后以objc->receiver去调用这个selector，
-    objc_msgSendSuper(&superclass, @selector(someInstanceMethod));
-    NSLog(@"%s",__func__);
-}
+//- (void)someInstanceMethod
+//{
+//    struct objc_super superclass = {
+//        .receiver    = self,    //方法的接受者 这个表明 调用这个方法最终的接受者 还是当前类
+//        .super_class = class_getSuperclass(object_getClass(self))
+//    };
+//    //从objc_super结构体指向的superClass的方法列表开始查找viewDidLoad的selector，找到后以objc->receiver去调用这个selector，
+//    objc_msgSendSuper(&superclass, @selector(someInstanceMethod));
+//    NSLog(@"%s",__func__);
+//}
 
 + (void)someClassMethod
 {

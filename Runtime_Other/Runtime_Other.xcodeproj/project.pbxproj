@@ -18,6 +18,8 @@
 		EBA927DF208B3638005871C2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBA927DA208B3638005871C2 /* Info.plist */; };
 		EBA927E3208B36E6005871C2 /* MsgSendSuper.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA927E2208B36E6005871C2 /* MsgSendSuper.m */; };
 		EBA927ED208B37D2005871C2 /* SuperObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA927EC208B37D2005871C2 /* SuperObject.m */; };
+		EBA927F1208B40B5005871C2 /* FrameworkMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA927F0208B40B5005871C2 /* FrameworkMethod.m */; };
+		EBA927F5208B431C005871C2 /* BlockIMP.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA927F4208B431C005871C2 /* BlockIMP.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,10 @@
 		EBA927E2208B36E6005871C2 /* MsgSendSuper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MsgSendSuper.m; sourceTree = "<group>"; };
 		EBA927EB208B37D2005871C2 /* SuperObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperObject.h; sourceTree = "<group>"; };
 		EBA927EC208B37D2005871C2 /* SuperObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperObject.m; sourceTree = "<group>"; };
+		EBA927EF208B40B5005871C2 /* FrameworkMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FrameworkMethod.h; sourceTree = "<group>"; };
+		EBA927F0208B40B5005871C2 /* FrameworkMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FrameworkMethod.m; sourceTree = "<group>"; };
+		EBA927F3208B431C005871C2 /* BlockIMP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockIMP.h; sourceTree = "<group>"; };
+		EBA927F4208B431C005871C2 /* BlockIMP.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockIMP.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,8 @@
 		EBA927A0208B3614005871C2 /* Runtime_Other */ = {
 			isa = PBXGroup;
 			children = (
+				EBA927F2208B42F1005871C2 /* Block */,
+				EBA927EE208B407F005871C2 /* Framework */,
 				EBA927E0208B36BC005871C2 /* Super */,
 				EBA927A1208B3614005871C2 /* AppDelegate.h */,
 				EBA927A2208B3614005871C2 /* AppDelegate.m */,
@@ -157,6 +165,24 @@
 				EBA927EC208B37D2005871C2 /* SuperObject.m */,
 			);
 			path = Super;
+			sourceTree = "<group>";
+		};
+		EBA927EE208B407F005871C2 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				EBA927EF208B40B5005871C2 /* FrameworkMethod.h */,
+				EBA927F0208B40B5005871C2 /* FrameworkMethod.m */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
+		EBA927F2208B42F1005871C2 /* Block */ = {
+			isa = PBXGroup;
+			children = (
+				EBA927F3208B431C005871C2 /* BlockIMP.h */,
+				EBA927F4208B431C005871C2 /* BlockIMP.m */,
+			);
+			path = Block;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +319,8 @@
 				EBA927A6208B3614005871C2 /* ViewController.m in Sources */,
 				EBA927ED208B37D2005871C2 /* SuperObject.m in Sources */,
 				EBA927E3208B36E6005871C2 /* MsgSendSuper.m in Sources */,
+				EBA927F5208B431C005871C2 /* BlockIMP.m in Sources */,
+				EBA927F1208B40B5005871C2 /* FrameworkMethod.m in Sources */,
 				EBA927DE208B3638005871C2 /* main.m in Sources */,
 				EBA927A3208B3614005871C2 /* AppDelegate.m in Sources */,
 			);
@@ -465,7 +493,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;
-				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Runtime_Other/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -483,7 +511,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;
-				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Runtime_Other/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

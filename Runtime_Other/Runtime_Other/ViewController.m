@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "MsgSendSuper.h"
+#import "FrameworkMethod.h"
+#import "BlockIMP.h"
 
 @interface ViewController ()
 
@@ -21,10 +23,24 @@
     [sender someInstanceMethod];
 }
 
+- (void)frameworkTest
+{
+    FrameworkMethod *md = [[FrameworkMethod alloc] init];
+//    [md getFrameworkInfo];
+    [md copyImageName];
+}
+
+- (void)blockIMPTest
+{
+    BlockIMP *imp = [[BlockIMP alloc] init];
+//    [imp impWithBlock];
+    [imp addMethod];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self superDemo];
+    [self blockIMPTest];
 }
 
 
