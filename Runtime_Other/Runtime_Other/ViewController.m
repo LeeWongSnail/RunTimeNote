@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MsgSendSuper.h"
 
 @interface ViewController ()
 
@@ -14,9 +15,16 @@
 
 @implementation ViewController
 
+- (void)superDemo
+{
+    MsgSendSuper *sender = [[MsgSendSuper alloc] init];
+    [sender someInstanceMethod];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self superDemo];
 }
 
 
