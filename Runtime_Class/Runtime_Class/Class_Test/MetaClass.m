@@ -34,8 +34,14 @@
 
     Class fatherSuperMeta = objc_getMetaClass(class_getName([Father superclass]));
     NSLog(@"%s's meta class : %s",class_getName([Father superclass]), class_getName(fatherSuperMeta));
+}
 
-
+- (void)classIsMetaClass
+{
+    Class cls = [Father class];
+    Class fatherMeta = objc_getMetaClass(class_getName([Father class]));
+    NSLog(@"%@ is %@ a meta class",[Father class],class_isMetaClass(cls)?@"":@"not");
+    NSLog(@"%@ is %@ a meta class",[fatherMeta class],class_isMetaClass(fatherMeta)?@"":@"not");
 }
 
 /**
@@ -47,6 +53,7 @@
     for (int i = 0; i < 4; i++) {
         NSLog(@"Following the isa pointer %d times gives %p", i, currentClass);
         currentClass = objc_getClass((__bridge void *)currentClass);
+        
     }
 }
 

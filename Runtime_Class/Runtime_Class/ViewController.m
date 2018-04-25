@@ -30,7 +30,8 @@
 {
     MetaClass *meta = [[MetaClass alloc] init];
 //    [meta getMetaClass];
-    [meta getSonMetaClassTree];
+//    [meta getSonMetaClassTree];
+    [meta classIsMetaClass];
 }
 
 - (void)superClassTest
@@ -45,12 +46,11 @@
     ClassInfo *info = [[ClassInfo alloc] init];
     NSLog(@"%@",[info getClassName]);
     NSLog(@"=====================================");
-    [info getClassVersion];
-    [info setClassVersion];
-    [info getClassVersion];
+//    [info getClassVersion];
+//    [info setClassVersion];
+    [info getInstanceSize];
     NSLog(@"=====================================");
     
-    [info getInstanceSize];
     
 }
 
@@ -77,7 +77,7 @@
     
 //    [property copyPropertyList];
 //    NSLog(@"add a property");
-    [property addPropertyDynamic];
+//    [property addPropertyDynamic];
     [property replaceClassProperty];
     
 }
@@ -117,7 +117,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self clsCreateInstance];
+    [self classProperty];
 }
 
 

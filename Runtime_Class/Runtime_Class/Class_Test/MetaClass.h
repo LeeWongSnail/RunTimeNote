@@ -13,4 +13,6 @@
 - (void)getMetaClass;
 
 - (void)getSonMetaClassTree;
+
+- (void)classIsMetaClass;
 @end
