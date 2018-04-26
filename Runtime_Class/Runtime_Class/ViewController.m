@@ -29,9 +29,9 @@
 - (void)metaClassTest
 {
     MetaClass *meta = [[MetaClass alloc] init];
-//    [meta getMetaClass];
+    [meta getMetaClass];
 //    [meta getSonMetaClassTree];
-    [meta classIsMetaClass];
+//    [meta classIsMetaClass];
 }
 
 - (void)superClassTest
@@ -121,7 +121,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self fetchClassInfo];
+    [self metaClassTest];
 }
 
 

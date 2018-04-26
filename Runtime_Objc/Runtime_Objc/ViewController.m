@@ -21,9 +21,9 @@
 {
     ObjcCreate_MRC *mrc = [[ObjcCreate_MRC alloc] init];
 //    [mrc createInstance];
-//    [mrc class_destoryInstance];
+    [mrc class_destoryInstance];
     
-    [mrc copyAtoBWithClass];
+//    [mrc copyAtoBWithClass];
 }
 
 - (void)object_method
@@ -49,8 +49,8 @@
     Objc_ClassList *list = [[Objc_ClassList alloc] init];
 //    [list getClassList];
 //    [list copyClassList];
-//    [list getSpecificClass];
-    [list getMetaClass];
+    [list getSpecificClass];
+//    [list getMetaClass];
 }
 
 

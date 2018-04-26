@@ -27,7 +27,6 @@
         outCount = newNumClasses;
         classes = (Class *)realloc(classes, sizeof(Class) * outCount);
         newNumClasses = objc_getClassList(classes, outCount);
-        
         for (int i = 0; i < outCount; i++) {
             const char *className = class_getName(classes[i]);
             NSLog(@"%s", className);
@@ -46,6 +45,7 @@
 {
     unsigned int outCount = 0;
     Class *clss =objc_copyClassList(&outCount);
+    
     for (int i = 0; i < outCount; i++) {
         NSLog(@"%s",class_getName(clss[i]));
     }

@@ -77,6 +77,8 @@ void imp_submethod1(id self,SEL cmd) {
         NSLog(@"ivar name = %s  ivar type = %s",property_getName(prop),property_getAttributes(prop));
     }
     free(props);
+    
+    objc_disposeClassPair(cls);
 }
 
 @end
