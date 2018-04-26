@@ -39,6 +39,7 @@
         NSLog(@"变量名称: %s,类型: %s,偏移量: %td",ivar_getName(ivar),ivar_getTypeEncoding(ivar),ivar_getOffset(ivar));
     }
     free(ivars);
+    
 }
 
 
