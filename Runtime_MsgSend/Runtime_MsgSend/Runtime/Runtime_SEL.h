@@ -11,9 +11,10 @@
 @interface Runtime_SEL : NSObject
 
 - (void)getSEL;
-
+- (void)getSELName;
 - (void)compareSEL;
 
+- (void)getUID;
 @end
 
 

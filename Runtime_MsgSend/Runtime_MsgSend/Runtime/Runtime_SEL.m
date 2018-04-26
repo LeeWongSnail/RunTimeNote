@@ -98,6 +98,12 @@
 }
 
 
+- (void)getUID
+{
+    SEL sel = sel_getUid("method");
+    [self performSelector:sel withObject:nil afterDelay:0];
+}
+
 
 
 - (void)method {

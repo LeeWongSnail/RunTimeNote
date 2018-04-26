@@ -22,7 +22,9 @@
 {
     Runtime_SEL *sel = [[Runtime_SEL alloc] init];
 //    [sel getSEL];
-    [sel compareSEL];
+//    [sel getSELName];
+//    [sel compareSEL];
+    [sel getUID];
 }
 
 - (void)method_test
@@ -48,7 +50,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self sendMsg];
+    [self sel_test];
 }
 
 
