@@ -889,4 +889,59 @@ PS: 可以让其他类遵守这个协议,或者在代码中用到这个协议均
 2018-04-26 14:29:24.658850+0800 Runtime_Class[11125:50447696] protocol name : Protocol1
 ```
 
+### Version
+
+#### class_getVersion
+
+`int class_getVersion(Class theClass)`
+
+作用：取类的版本信息。
+参数：theClass 目标类。
+返回值：返回的是结构体class_rw_t中的uint32_t version的值。
+
+示例:
+
+```objc
+- (long)getClassVersion
+{
+    NSLog(@"current class version %d",class_getVersion([self class]));
+    return class_getVersion([self class]);
+}
+```
+
+打印结果：
+
+```c
+2018-04-26 14:32:53.889830+0800 Runtime_Class[11314:50463052] current class version 0
+```
+
+#### class_setVersion
+
+`void class_setVersion(Class theClass, int version)`
+
+作用：设置一个类的version(有时候字典转模型 比如后面添加了一些属性可以通过判断这个version来判断如何解析).
+
+参数: 目标类 要设置的version
+返回值: void
+
+示例：
+
+```objc
+- (void)setClassVersion
+{
+    NSLog(@"add version");
+    class_setVersion([self class], class_getVersion([self class])+1);
+}
+```
+
+打印结果：
+
+```c
+2018-04-26 14:36:49.200232+0800 Runtime_Class[11457:50478345] ===============before======================
+2018-04-26 14:36:49.201122+0800 Runtime_Class[11457:50478345] current class version 0
+2018-04-26 14:36:49.201966+0800 Runtime_Class[11457:50478345] ================after=====================
+2018-04-26 14:36:49.202821+0800 Runtime_Class[11457:50478345] add version
+2018-04-26 14:36:49.203682+0800 Runtime_Class[11457:50478345] current class version 1
+```
+
 

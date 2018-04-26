@@ -44,12 +44,13 @@
 - (void)fetchClassInfo
 {
     ClassInfo *info = [[ClassInfo alloc] init];
-    NSLog(@"%@",[info getClassName]);
-    NSLog(@"=====================================");
-//    [info getClassVersion];
-//    [info setClassVersion];
-    [info getInstanceSize];
-    NSLog(@"=====================================");
+//    NSLog(@"%@",[info getClassName]);
+    NSLog(@"===============before======================");
+    [info getClassVersion];
+    NSLog(@"================after=====================");
+    [info setClassVersion];
+    [info getClassVersion];
+//    [info getInstanceSize];
     
     
 }
@@ -120,7 +121,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self protocol_getProtocolList];
+    [self fetchClassInfo];
 }
 
 
