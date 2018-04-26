@@ -527,7 +527,261 @@ Method class_getClassMethod(Class cls, SEL sel)
 }
 ```
 
+#### class_copyMethodList
+
+`Method * class_copyMethodList(Class cls, unsigned int *outCount)`
+
+作用: 获取对应类的所有实例方法(不会搜索父类)
+参数: 要获取哪个类; 实例方法的个数
+返回值: 一个指向 方法数组的第一个元素的指针
+
+示例:
+
+```objc
+- (void)getMethodList
+{
+    unsigned int outCount = 0;
+    Method *list = class_copyMethodList([Son class], &outCount);
+    for (int i = 0; i < outCount; i++) {
+        Method m = list[i];
+        if (m != NULL) {
+            NSLog(@"method %s", method_getName(m));
+        }
+    }
+    free(list);
+}
+```
+
+打印结果:
+
+```c
+2018-04-26 11:06:08.109901+0800 Runtime_Class[6669:50001717] method works
+2018-04-26 11:06:08.110039+0800 Runtime_Class[6669:50001717] method setWorks:
+2018-04-26 11:06:08.110137+0800 Runtime_Class[6669:50001717] method cry
+2018-04-26 11:06:08.110253+0800 Runtime_Class[6669:50001717] method .cxx_destruct
+2018-04-26 11:06:08.110349+0800 Runtime_Class[6669:50001717] method setIcon:
+2018-04-26 11:06:08.110437+0800 Runtime_Class[6669:50001717] method icon
+2018-04-26 11:06:08.110536+0800 Runtime_Class[6669:50001717] method setAge:
+2018-04-26 11:06:08.110641+0800 Runtime_Class[6669:50001717] method age
+```
+
+`注意`: 实例方法是包含 一些属性的setter和getter方法的,同时还包括一个 `.cxx_destruct方法` 它是引入ARC概念之后，编译器自动生成的方法，用于释放实例变量.
+
+#### class_addMethod
+
+`BOOL class_addMethod(Class cls, SEL name, IMP imp, const char *types)`
+
+作用: 像类中添加一个实例方法
+参数: 添加方法的类,方法名，方法实现,参数的类型编码
+返回值: 如果方法添加成功则返回YES，否则返回NO（比如cls中有同名方法）。
+
+示例:
+
+```objc
+    [self getMethodList];
+    BOOL suc = class_addMethod([self class], @selector(TestMetaClass), (IMP)TestMetaClass, "v@:");
+    if (suc) {
+        NSLog(@"add success");
+        NSLog(@"---------after add method-------------");
+        [self getMethodList];
+        //如果添加成功会调用这个方法
+        [self performSelector:@selector(TestMetaClass)];
+    } else {
+        NSLog(@"add failed");
+    }
+    
+//要添加方法的实现
+void TestMetaClass(id self, SEL _cmd) {
+    NSLog(@"testMetaClass");
+}
+```
+
+打印结果:
+
+```c
+2018-04-26 11:14:32.672648+0800 Runtime_Class[6949:50032543] method works
+2018-04-26 11:14:32.672793+0800 Runtime_Class[6949:50032543] method setWorks:
+2018-04-26 11:14:32.672911+0800 Runtime_Class[6949:50032543] method cry
+2018-04-26 11:14:32.673027+0800 Runtime_Class[6949:50032543] method .cxx_destruct
+2018-04-26 11:14:32.673130+0800 Runtime_Class[6949:50032543] method setIcon:
+2018-04-26 11:14:32.673230+0800 Runtime_Class[6949:50032543] method icon
+2018-04-26 11:14:32.673345+0800 Runtime_Class[6949:50032543] method setAge:
+2018-04-26 11:14:32.673443+0800 Runtime_Class[6949:50032543] method age
+2018-04-26 11:14:32.673550+0800 Runtime_Class[6949:50032543] add success
+2018-04-26 11:14:32.673637+0800 Runtime_Class[6949:50032543] ---------after add method-------------
+2018-04-26 11:14:32.673748+0800 Runtime_Class[6949:50032543] method works
+2018-04-26 11:14:32.673839+0800 Runtime_Class[6949:50032543] method setWorks:
+2018-04-26 11:14:32.673947+0800 Runtime_Class[6949:50032543] method cry
+2018-04-26 11:14:32.674053+0800 Runtime_Class[6949:50032543] method .cxx_destruct
+2018-04-26 11:14:32.674138+0800 Runtime_Class[6949:50032543] method setIcon:
+2018-04-26 11:14:32.674239+0800 Runtime_Class[6949:50032543] method icon
+2018-04-26 11:14:32.674384+0800 Runtime_Class[6949:50032543] method setAge:
+2018-04-26 11:14:32.674575+0800 Runtime_Class[6949:50032543] method age
+2018-04-26 11:14:32.674818+0800 Runtime_Class[6949:50032543] testMetaClass
+
+```
+
+`注意`: 用`class_addMethod`添加的方法,使用`class_copyMethodList`时,无法获取 但是 使用`performSelector`可以调用
+
+PS: `class_addMethod`添加成功之后会覆盖父类的实现，但是不会替代本类中已经存在的实现。如果要修改已存在的函数实现，可以使用`method_setImplementation`函数。
+
+具体可以看一下`addMethod`实现的源码
+
+```objc
+static IMP 
+addMethod(Class cls, SEL name, IMP imp, const char *types, bool replace)
+{
+    IMP result = nil;
+
+    runtimeLock.assertWriting();
+
+    assert(types);
+    assert(cls->isRealized());
+
+    method_t *m;
+    if ((m = getMethodNoSuper_nolock(cls, name))) {
+        // already exists
+        if (!replace) {
+            result = m->imp;
+        } else {
+            result = _method_setImplementation(cls, m, imp);
+        }
+    } else {
+        ...
+    }
+```
+
+#### class_replaceMethod
+
+`IMP class_replaceMethod(Class cls, SEL name, IMP imp, const char *types)`
+
+作用: 替换一个方法的实现
+参数:cls 目标类;name 需要被替换的函数名;imp 新的函数实现;types 方法返回值和参数的编码类型
+
+示例:
+
+```objc
+- (void)replaceMethodImplementation
+{
+    Method method = class_getInstanceMethod([self class], @selector(method1));
+    class_replaceMethod([self class], @selector(method2), method_getImplementation(method), method_getTypeEncoding(method));
+    [self method1];
+    [self method2];
+}
+```
+
+打印结果:
+
+```objc
+2018-04-26 11:23:30.984390+0800 Runtime_Class[7233:50066183] -[ClassMethod method1]
+2018-04-26 11:23:30.984513+0800 Runtime_Class[7233:50066183] -[ClassMethod method1]
+```
+
+`注意`:
+
+* 如果类cls中没有名字叫name的函数，那么执行的逻辑和class_addMethod一样。
+* 如果类cls中已有名字叫name的函数，那么执行的逻辑和method_setImplementation一样。
+
+PS: 看一下`class_replaceMethod`的实现
+
+```objc
+
+IMP 
+class_replaceMethod(Class cls, SEL name, IMP imp, const char *types)
+{
+    if (!cls) return nil;
+
+    rwlock_writer_t lock(runtimeLock);
+    return addMethod(cls, name, imp, types ?: "", YES);
+}
+```
+
+#### class_getMethodImplementation
+
+`IMP class_getMethodImplementation(Class cls, SEL name)`
+
+作用: 获取一个方法的实现
+参数: cls 目标类(如果获取的是类方法要传元类)，name 目标函数名。
+返回值: 这个方法的实现,如果cls是Nil则返回NULL,如果函数name不存在的话，返回的IMP回事runtime过程中的消息转发部分(如果找不到这个方法 就走转发流程)
+
+示例:
+
+```objc
+- (void)getMethodImplementation
+{
+    IMP imp = class_getMethodImplementation([self class], @selector(method1));
+    imp();
+}
+
+- (void)method1
+{
+    NSLog(@"%s",__func__);
+}
+```
+
+打印结果:
+
+```c
+2018-04-26 11:29:07.694867+0800 Runtime_Class[7424:50088920] -[ClassMethod method1]
+```
+
+PS:看一下class_getMethodImplementation的实现
+
+```objc
+IMP class_getMethodImplementation(Class cls, SEL sel)
+{
+    IMP imp;
+    //如果类不存在 返回nil
+    if (!cls  ||  !sel) return nil;
+    //去这个类以及他的父类中去查找这个方法
+    imp = lookUpImpOrNil(cls, sel, nil, 
+                         YES/*initialize*/, YES/*cache*/, YES/*resolver*/);
+
+    // Translate forwarding function to C-callable external version
+    //如果没有找到这个方法 那么走转发流程
+    if (!imp) {
+        return _objc_msgForward;
+    }
+
+    return imp;
+}
+```
+
+#### class_getMethodImplementation_stret
+
+`IMP class_getMethodImplementation_stret(Class cls, SEL name)`
+
+使用基本与`class_getMethodImplementation`相同,
+
+`注意`：这个函数在arm64架构下不能用
 
 
+#### class_respondsToSelector
 
+`BOOL class_respondsToSelector(Class cls, SEL sel)`
+
+作用: 判断某个类是否实现了某个方法
+参数: cls 目标类(如果是类方法 传元类)，sel 目标方法。
+返回值: 如果类的实例能响应sel，就会返回YES，不响应则返回NO
+
+示例:
+
+```objc
+- (void)class_respondsToSelector
+{
+    if (class_respondsToSelector([self class], @selector(method1))) {
+        NSLog(@"method1 has responds");
+    } else {
+        NSLog(@"method1 has no responds");
+    }
+}
+```
+
+打印结果:
+
+```c
+2018-04-26 11:36:07.829896+0800 Runtime_Class[7642:50115699] method1 has responds
+```
+ 
+`注意`: 该方法会查找父类的实例方法
 

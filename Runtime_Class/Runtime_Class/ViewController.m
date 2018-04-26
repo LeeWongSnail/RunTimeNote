@@ -87,9 +87,10 @@
 {
     ClassMethod *m = [[ClassMethod alloc] init];
 //    [m getInstanceMethod];
-    [m getClassMethod];
+//    [m getClassMethod];
+//    [m getMethodList];
 //    [m replaceMethodImplementation];
-    
+    [m class_respondsToSelector];
 //    [m getMethodImplementation];
 //    [m addClassMethod];
 }
