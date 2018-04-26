@@ -99,7 +99,9 @@
 {
     ClassProtocol *p = [[ClassProtocol alloc] init];
 //    [p classConformsProtocol];
-    [p addProtocol];
+//    [p addProtocol];
+//    [p classConformsProtocol];
+    [p copyProtocolList];
 }
 
 - (void)createClass
@@ -118,7 +120,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self class_getMethod];
+    [self protocol_getProtocolList];
 }
 
 

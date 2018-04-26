@@ -61,18 +61,47 @@
 - (void)addProtocol
 {
     Protocol *p = objc_getProtocol("Protocol2");
+    
+//    NSLog(@"before");
+//    [self copyProtocolList];
+    
+    if (class_conformsToProtocol([self class], p)) {
+        NSLog(@"conform to %s",protocol_getName(p));
+    }
+    
     if (class_addProtocol([self class], p)) {
         NSLog(@"add protoccol2 success");
     } else {
         NSLog(@"add protocol2 failed");
     }
     
+    NSLog(@"after");
+    [self copyProtocolList];
+//    class_addMethod([self class], @selector(method2InProtocol2), (IMP)protocolMethod, "v@:");
+    
+    if (class_conformsToProtocol([self class], p)) {
+        NSLog(@"conform to %s",protocol_getName(p));
+    }
+    
+    if ([self conformsToProtocol:p]) {
+        NSLog(@"conform to %s",protocol_getName(p));
+    }
+    
+}
+
+void protocolMethod(id self, SEL _cmd) {
+    NSLog(@"protocolMethod");
 }
 
 
 #pragma mark -
 
 - (void)method1InProtocol1
+{
+    NSLog(@"%s",__func__);
+}
+
+- (void)method2InProtocol2
 {
     NSLog(@"%s",__func__);
 }

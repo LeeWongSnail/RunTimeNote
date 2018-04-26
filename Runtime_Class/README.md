@@ -785,3 +785,108 @@ IMP class_getMethodImplementation(Class cls, SEL sel)
  
 `注意`: 该方法会查找父类的实例方法
 
+
+### Protocol
+
+#### class_addProtocol
+
+`BOOL class_addProtocol(Class cls, Protocol *protocol)`
+
+作用: 为一个类添加一个协议
+参数: 为cls添加protocol协议
+返回值: 是否添加成功
+
+示例:
+
+```objc
+- (void)addProtocol
+{
+    Protocol *p = objc_getProtocol("Protocol2");
+    if(!p)  NSLog(@"can not find protocol");
+    if (class_conformsToProtocol([self class], p)) {
+        NSLog(@"conform to %s",protocol_getName(p));
+    }
+    
+    if (class_addProtocol([self class], p)) {
+        NSLog(@"add protoccol2 success");
+    } else {
+        NSLog(@"add protocol2 failed");
+    }
+    
+    if (class_conformsToProtocol([self class], p)) {
+        NSLog(@"conform to %s",protocol_getName(p));
+    }
+    
+}
+```
+
+打印结果:
+
+```c
+2018-04-26 11:52:58.978619+0800 Runtime_Class[8302:50177041] add protoccol2 success
+```
+
+`注意`: 给类添加的这个协议 必须是存在于全局的协议列表中的(即这个协议在代码中被使用过被某个类遵守过或显示使用过),否则`Protocol *p = objc_getProtocol("Protocol2");`中将无法获取这个协议(nil) 但是class_addProtocol中没有判断protocol是否为nil 因此是会给你返回success,但实际上没有给类添加成功这个协议。
+
+```
+@note You should usually use NSObject's conformsToProtocol: method instead of this function.
+```
+
+PS: 可以让其他类遵守这个协议,或者在代码中用到这个协议均可(@protocol(protocolName));
+
+#### class_conformsToProtocol
+
+`BOOL class_conformsToProtocol(Class cls, Protocol *protocol)`
+
+作用: 判断某各类是否遵守实现了某个协议
+参数: cls 目标类，protocol 需要判断的协议。
+返回值: 目标类是否遵守了这个协议
+
+示例
+
+```objc
+    Protocol *p = objc_getProtocol("Protocol1");
+    if (class_conformsToProtocol([self class], p)) {
+        NSLog(@"%s implementation %s",class_getName([self class]),protocol_getName(p));
+    } else {
+        NSLog(@"%s not implementation %s",class_getName([self class]),protocol_getName(p));
+    }
+```
+
+打印结果:
+
+```c
+2018-04-26 14:26:29.019576+0800 Runtime_Class[10993:50435809] ClassProtocol implementation Protocol1
+```
+
+#### class_copyProtocolList
+
+`Protocol ** class_copyProtocolList(Class cls, unsigned int *outCount)`
+
+作用：获取类实现的所有协议。
+参数：cls 目标类,outCount 取得的protocol个数。
+返回值：返回包含所有protocol的数组，如果没有实现任何协议则返回nil
+
+示例：
+
+```objc
+- (void)copyProtocolList
+{
+    unsigned int  outCount = 0;
+    Protocol * __unsafe_unretained * protocols = class_copyProtocolList([self class], &outCount);
+    Protocol * protocol;
+    for (int i = 0; i < outCount; i++) {
+        protocol = protocols[i];
+        NSLog(@"protocol name : %s",protocol_getName(protocol));
+    }
+    free(protocols);
+}
+```
+
+打印结果:
+
+```c
+2018-04-26 14:29:24.658850+0800 Runtime_Class[11125:50447696] protocol name : Protocol1
+```
+
+
