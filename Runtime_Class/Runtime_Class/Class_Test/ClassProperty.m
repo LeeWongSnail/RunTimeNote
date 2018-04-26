@@ -69,13 +69,44 @@
  */
 - (void)replaceClassProperty
 {
-    objc_property_attribute_t type = {"T", "@\"NSArray\""};
-    objc_property_attribute_t ownership = { "&N", "" };
-    objc_property_attribute_t backingivar = { "V", "_age"};
-    objc_property_attribute_t attrs[] = {type, ownership, backingivar};
-    class_replaceProperty([self class], "age", attrs, 3);
-  
-    NSLog(@"--------- after replace -----------------");
-     [self copyPropertyList];
+    unsigned int count;
+    objc_property_t *properties = class_copyPropertyList([self class], &count);
+    for (int i = 0; i < count; i++) {
+        objc_property_t property = properties[i];
+        if (strcmp(property_getName(property), "name") == 0) {
+            NSLog(@"name = %s,atttrs = %s", property_getName(property), property_getAttributes(property));
+        }
+    }
+    free(properties);
+    
+    
+    objc_property_attribute_t type;
+    type.name = "T";
+    type.value = "@\"NSString\"";
+    
+    objc_property_attribute_t des;
+    des.name = "R";
+    des.value = "";
+    
+    objc_property_attribute_t namic;
+    namic.name = "N";
+    namic.value = "";
+    
+    objc_property_attribute_t name;
+    name.name = "V";
+    name.value = "xxname";
+    
+    objc_property_attribute_t atts[] = {type,des,namic,name};
+    class_replaceProperty([self class], "name", atts, 4);
+    
+    unsigned int count2;
+    objc_property_t *properties2 = class_copyPropertyList([self class], &count2);
+    for (int i = 0; i < count; i++) {
+        objc_property_t property = properties2[i];
+        if (strcmp(property_getName(property), "name") == 0) {
+            NSLog(@"name = %s,atttrs = %s", property_getName(property), property_getAttributes(property));
+        }
+    }
+    free(properties2);
 }
 @end

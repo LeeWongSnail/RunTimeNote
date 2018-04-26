@@ -264,18 +264,269 @@ struct objc_class : objc_object {
 ```objc
 - (void)replaceClassProperty
 {
-    objc_property_attribute_t type = {"T", "@\"NSArray\""};
-    objc_property_attribute_t ownership = { "&N", "" };
-    objc_property_attribute_t backingivar = { "V", "_nickName"};
-    objc_property_attribute_t attrs[] = {type, ownership, backingivar};
-    class_replaceProperty([self class], "nickName", attrs, 3);
-  
-    NSLog(@"--------- after replace -----------------");
-     [self copyPropertyList];
+    unsigned int count;
+    objc_property_t *properties = class_copyPropertyList([self class], &count);
+    for (int i = 0; i < count; i++) {
+        objc_property_t property = properties[i];
+        if (strcmp(property_getName(property), "name") == 0) {
+            NSLog(@"name = %s,atttrs = %s", property_getName(property), property_getAttributes(property));
+        }
+    }
+    free(properties);
+    
+    
+    objc_property_attribute_t type;
+    type.name = "T";
+    type.value = "@\"NSString\"";
+    
+    objc_property_attribute_t des;
+    des.name = "R";
+    des.value = "";
+    
+    objc_property_attribute_t namic;
+    namic.name = "N";
+    namic.value = "";
+    
+    objc_property_attribute_t name;
+    name.name = "V";
+    name.value = "xxname";
+    
+    objc_property_attribute_t atts[] = {type,des,namic,name};
+    class_replaceProperty([self class], "name", atts, 4);
+    
+    unsigned int count2;
+    objc_property_t *properties2 = class_copyPropertyList([self class], &count2);
+    for (int i = 0; i < count; i++) {
+        objc_property_t property = properties2[i];
+        if (strcmp(property_getName(property), "name") == 0) {
+            NSLog(@"name = %s,atttrs = %s", property_getName(property), property_getAttributes(property));
+        }
+    }
+    free(properties2);
 }
 ```
 
 打印结果:
+
+```c
+2018-04-26 10:22:47.780493+0800 Runtime_Class[5195:49841358] name = name,atttrs = T@"NSString",C,N,VmyName
+2018-04-26 10:22:47.780660+0800 Runtime_Class[5195:49841358] name = name,atttrs = T@"NSString",R,N,Vxxname
+```
+
+`注意`:class_replaceProperty查看runtime的内部实现
+
+```objc
+void 
+class_replaceProperty(Class cls, const char *name, 
+                      const objc_property_attribute_t *attrs, unsigned int n)
+{
+    _class_addProperty(cls, name, attrs, n, YES);
+}
+```
+
+在add中有下面一个判断
+
+```objc
+     property_t *prop = class_getProperty(cls, name);
+    if (prop  &&  !replace) { //属性是否已经存在 如果存在切不需要替换直接返回
+        // already exists, refuse to replace
+        return NO;
+    } 
+    else if (prop) { //属性如果已经存在但是需要替换 那么修改prop的attributes
+        // replace existing
+        rwlock_writer_t lock(runtimeLock);
+        try_free(prop->attributes);
+        prop->attributes = copyPropertyAttributeString(attrs, count);
+        return YES;
+    }
+    else { //如果属性不存在那么新建这个属性
+        ...
+    }
+```
+
+### Ivar
+
+#### class_copyIvarList
+
+`Ivar * class_copyIvarList(Class cls, unsigned int *outCount)`
+
+作用: 获取某各类的所有实例变量的列表
+参数: 要获取的类 以及一个unsingn int 类型的数值(返回实例变量的个数)
+返回值: 返回一个包含所有Ivar的数组。
+
+`注意`:这个方法不会获取父类的实例变量 如果cls为空 那么Ivar为null outCount=0
+
+示例:
+
+```objc
+- (void)getIvarList
+{
+    unsigned int count = 0;
+    Ivar *vars = class_copyIvarList([Son class], &count);
+    for (int i = 0 ; i <count; i++) {
+        Ivar var = vars[i];
+        NSLog(@"ivar name = %s  ivar type = %s",ivar_getName(var),ivar_getTypeEncoding(var));
+    }
+    free(vars);
+}
+```
+
+输出结果:
+
+```c
+2018-04-26 10:35:53.252614+0800 Runtime_Class[5598:49888753] ivar name = _age  ivar type = q
+2018-04-26 10:35:53.252725+0800 Runtime_Class[5598:49888753] ivar name = _icon  ivar type = @"NSString"
+2018-04-26 10:35:53.252822+0800 Runtime_Class[5598:49888753] ivar name = _works  ivar type = @"NSArray"
+```
+
+#### class_addIvar
+
+`BOOL class_addIvar(Class cls, const char *name, size_t size, unit8_t alignment, const char *types)`
+
+作用: 想一个类中添加一个实例变量
+参数: 要添加实例变量的cls(必须是类对象不可以是元类);实例变量的名称;实例变量的大小;内存对齐;变量的类型
+返回值: 是否添加成功
+
+`注意`:Objective-C不支持往已存在的类中添加实例变量，因此不管是系统库提供的提供的类，还是我们自定义的类，都无法动态添加成员变量。但如果我们通过运行时来创建一个类的话，可以使用这个方法在`objc_allocateClassPair`和`objc_registerClassPair`之间添加类的实例变量
+
+示例:
+
+```objc
+    Class cls = objc_allocateClassPair(NSObject.class, "Person", 0);
+    class_addIvar(cls, "_nickname", sizeof(NSString *), log(sizeof(NSString *)), "i");
+    objc_registerClassPair(cls);
+    id instance = [[cls alloc] init];
+    
+    unsigned int count = 0;
+    Ivar *vars = class_copyIvarList([instance class], &count);
+    for (int i = 0 ; i <count; i++) {
+        Ivar var = vars[i];
+        NSLog(@"ivar name = %s  ivar type = %s",ivar_getName(var),ivar_getTypeEncoding(var));
+    }
+    free(vars);
+```
+
+打印结果:
+
+```c
+2018-04-26 10:45:42.331474+0800 Runtime_Class[5921:49924803] ivar name = _nickname  ivar type = i
+```
+
+PS: 不可以像元类中添加实例变量
+
+```objc
+class_addIvar(Class cls, const char *name, size_t size, 
+              uint8_t alignment, const char *type)
+{
+    if (!cls) return NO;
+    // No class variables
+    if (cls->isMetaClass()) {
+        return NO;
+    }
+}
+```
+
+#### class_getInstanceVariable
+
+`Ivar class_getInstanceVariable(Class cls, const char* name)`
+
+作用: 获取指定类的实例变量的数据结构
+参数: cls包含目标实例变量的类，name是实例变量的名称
+返回值: 对应的实例变量
+
+示例:
+
+```objc
+- (void)getInstanceVariable
+{
+    Ivar var = class_getInstanceVariable([self class], "_name");
+    NSLog(@"ivar name = %s  ivar type = %s",ivar_getName(var),ivar_getTypeEncoding(var));
+}
+```
+
+打印结果:
+
+```c
+2018-04-26 10:50:40.291842+0800 Runtime_Class[6093:49943955] ivar name = _name  ivar type = @"NSString"
+```
+
+`注意`:这里获取实例变量的时候 如果是使用@property这种方式声明的属性,对应的实例变量是前面添加_的。
+
+### methodList
+
+#### class_getInstanceMethod
+
+`Method class_getInstanceMethod(Class aClass, SEL aSelector)`
+
+作用: 获取某一个实例方法
+参数: class 要获取实例方法所属的类  SEL 要获取方法的名称
+返回值: 获取得到的这个方法
+
+示例:
+
+```objc
+  Method method = class_getInstanceMethod([self class], @selector(method1));
+    if (method != NULL) {
+        NSLog(@"method %s", method_getName(method));
+        
+    }
+```
+
+打印结果:
+
+```c
+2018-04-26 10:55:31.875697+0800 Runtime_Class[6254:49961748] method method1
+```
+
+`注意`:这个方法会搜索父类的实现,如果这个方法只是声明但是并没有具体的实现 那么这里拿到的method将会是null.
+
+PS:method结构体的数据结构(将SEL与IMP做了一个对应)
+
+```c
+struct objc_method {
+    SEL method_name OBJC2_UNAVAILABLE;
+    char *method_types  OBJC2_UNAVAILABLE;
+    IMP method_imp      OBJC2_UNAVAILABLE;
+} 
+```
+
+#### class_getClassMethod
+
+`Method class_getClassMethod(Class aClass, SEL aSelector)`
+
+作用: 获取一个类的类方法
+参数: 跟获取实例方法的相同(直接传类 不需要传元类)
+返回值: 要获取的方法的实例
+
+示例:
+
+```objc
+    Method method = class_getClassMethod([self class], @selector(myClassMethod));
+    if (method != NULL) {
+        NSLog(@"method %s", method_getName(method));
+    }
+```
+
+打印结果:
+
+```
+2018-04-26 11:02:30.067070+0800 Runtime_Class[6495:49987669] method myClassMethod
+```
+
+`注意`:：该方法会搜索父类的类方法
+
+PS:
+其实这个方法内部调用了`class_getInstanceMethod`然后把类转换成元类
+
+```c
+Method class_getClassMethod(Class cls, SEL sel)
+{
+    if (!cls  ||  !sel) return nil;
+
+    return class_getInstanceMethod(cls->getMeta(), sel);
+}
+```
+
 
 
 

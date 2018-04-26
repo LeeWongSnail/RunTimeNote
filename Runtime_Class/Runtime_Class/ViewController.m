@@ -58,15 +58,15 @@
 {
     ClassIvar *ivar = [[ClassIvar alloc] init];
     [ivar getInstanceVariable];
-    ivar.name = @"Lee";
-    [ivar getInstanceVariable];
+//    ivar.name = @"Lee";
+//    [ivar getInstanceVariable];
     
     NSLog(@"get ivar list");
     
-    [ivar getIvarList];
+//    [ivar getIvarList];
     
     NSLog(@"add ivar in runtime");
-    [ivar addIvarDynamic];
+//    [ivar addIvarDynamic];
 
 }
 
@@ -87,11 +87,11 @@
 {
     ClassMethod *m = [[ClassMethod alloc] init];
 //    [m getInstanceMethod];
-    
+    [m getClassMethod];
 //    [m replaceMethodImplementation];
     
 //    [m getMethodImplementation];
-    [m addClassMethod];
+//    [m addClassMethod];
 }
 
 - (void)protocol_getProtocolList
@@ -117,7 +117,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self classProperty];
+    [self class_getMethod];
 }
 
 
