@@ -51,4 +51,23 @@
     free(ivars);
 }
 
+- (void)copyAttributeValue
+{
+    objc_property_t p = class_getProperty([Father class], "name");
+    NSLog(@"property name : %s",property_copyAttributeValue(p, "V"));
+    NSLog(@"property type : %s",property_copyAttributeValue(p, "T"));
+
+}
+
+- (void)copyAttributeList
+{
+    objc_property_t p = class_getProperty([Father class], "name");
+    unsigned int outCount = 0;
+    objc_property_attribute_t *attrs = property_copyAttributeList(p, &outCount);
+    for (unsigned int i = 0; i < outCount; i++) {
+        objc_property_attribute_t t = attrs[i];
+        NSLog(@"property name is %s --- property value is %s",t.name,t.value);
+    }
+}
+
 @end

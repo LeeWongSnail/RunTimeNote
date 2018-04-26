@@ -10,4 +10,6 @@
 
 @interface Objc_Property : NSObject
 - (void)getProperty;
+- (void)copyAttributeValue;
+- (void)copyAttributeList;
 @end

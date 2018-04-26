@@ -34,7 +34,9 @@
 - (void)objcProperty_test
 {
     Objc_Property *prop = [[Objc_Property alloc] init];
-    [prop getProperty];
+//    [prop getProperty];
+//    [prop copyAttributeValue];
+    [prop copyAttributeList];
 }
 
 - (void)associateObject_test
@@ -67,7 +69,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self objcIvar_test];
+    [self objcProperty_test];
 }
 
 
