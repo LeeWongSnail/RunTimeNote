@@ -20,9 +20,9 @@
 - (void)categoryTest
 {
     Runtime_Category *cate = [[Runtime_Category alloc] init];
-//    [cate getInstanceMethods];
+    [cate getInstanceMethods];
     
-    [cate getClassMethods];
+//    [cate getClassMethods];
 }
 
 
@@ -33,6 +33,7 @@
 //    [prop getProtocolList];
 //    [prop addProtocolDurRuntime];
 //    [prop copyProtocolPropertyList];
+//    [prop protocolEqual];
 //    [prop getSpecificProperty];
     
     [prop protocolConformProtocol];

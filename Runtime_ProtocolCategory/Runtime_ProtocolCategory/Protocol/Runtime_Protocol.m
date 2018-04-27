@@ -35,6 +35,26 @@
 
 }
 
+- (void)protocolEqual
+{
+    Protocol *prop = objc_getProtocol("RuntimeProtocol1");
+    Protocol *prop1 = objc_getProtocol("RuntimeProtocol2");
+    if (protocol_isEqual(prop, prop1)) {
+        NSLog(@"prop equal to prop1");
+    } else {
+        NSLog(@"prop not equal to prop1");
+    }
+    
+    
+    Protocol *prop2 = objc_getProtocol("RuntimeProtocol2");
+    if (protocol_isEqual(prop2, prop1)) {
+        NSLog(@"prop2 equal to prop1");
+    }else {
+        NSLog(@"prop2 not equal to prop1");
+    }
+    
+}
+
 
 /**
  获取运行时所知道的所有协议的数组
@@ -126,6 +146,7 @@
     }
     
 }
+
 
 
 /**

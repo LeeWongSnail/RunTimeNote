@@ -531,7 +531,7 @@ Method class_getClassMethod(Class cls, SEL sel)
 
 `Method * class_copyMethodList(Class cls, unsigned int *outCount)`
 
-作用: 获取对应类的所有实例方法(不会搜索父类)
+作用: 获取对应类的所有实例方法(不会搜索父类但是包含分类的方法)
 参数: 要获取哪个类; 实例方法的个数
 返回值: 一个指向 方法数组的第一个元素的指针
 
@@ -565,7 +565,7 @@ Method class_getClassMethod(Class cls, SEL sel)
 2018-04-26 11:06:08.110641+0800 Runtime_Class[6669:50001717] method age
 ```
 
-`注意`: 实例方法是包含 一些属性的setter和getter方法的,同时还包括一个 `.cxx_destruct方法` 它是引入ARC概念之后，编译器自动生成的方法，用于释放实例变量.
+`注意`: 实例方法是包含 一些属性的setter和getter方法的,同时还包括一个 `.cxx_destruct方法` 它是引入ARC概念之后，编译器自动生成的方法，用于释放实例变量.同时这里可以获取到的方法均是声明且实现的方法.如果只是声明但是没有实现也是无法获取的。
 
 #### class_addMethod
 

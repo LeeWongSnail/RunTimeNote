@@ -36,6 +36,8 @@
 - (void)getProtocolList;
 - (void)addProtocolDurRuntime;
 
+- (void)protocolEqual;
+
 - (void)copyProtocolPropertyList;
 - (void)getSpecificProperty;
 
