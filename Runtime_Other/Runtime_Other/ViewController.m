@@ -20,7 +20,7 @@
 - (void)superDemo
 {
     MsgSendSuper *sender = [[MsgSendSuper alloc] init];
-    [sender someInstanceMethod];
+//    [sender someInstanceMethod];
 }
 
 - (void)frameworkTest
@@ -40,7 +40,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self blockIMPTest];
+    [self superDemo];
 }
 
 
