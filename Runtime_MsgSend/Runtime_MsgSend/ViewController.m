@@ -32,11 +32,16 @@
     Runtime_Method *m = [[Runtime_Method alloc] init];
 //    [m invoke_test];
 //    [m getMethodName];
+//    [m getMethodIMP];
+//    [m getNotIMPMethodImp];
 //    [m getTypeEncoding];
 //    [m copyReturnType];
 //    [m copyArguType];
+//    [m getReturnType];
+//    [m getArguemtnType];
+//    [m getMethodDescription];
 //    [m setIMP];
-//    [m exchangeMethod];
+    [m exchangeMethod];
 }
 
 - (void)sendMsg
@@ -50,7 +55,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self sel_test];
+    [self method_test];
 }
 
 

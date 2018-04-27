@@ -21,6 +21,11 @@
 #import "Runtime_Method.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
+#import "Son.h"
+
+@interface Runtime_Method ()
+@property (nonatomic, strong) Son *son;
+@end
 
 @implementation Runtime_Method
 
@@ -39,6 +44,7 @@
 //    if (md) {
 //        method_invoke(self, md);
 //    }
+//    
 //}
 
 
@@ -49,10 +55,10 @@
 - (void)getMethodName
 {
     Method md = class_getInstanceMethod([self class], @selector(methodTest));
-    SEL mdName = method_getName(md);
+    SEL mdName = method_getName(nil);
     NSLog(@"%p--%s",mdName,sel_getName(mdName));
+    
 }
-
 
 /**
  获取方法的实现
@@ -62,7 +68,7 @@
     Method md = class_getInstanceMethod([self class], @selector(methodTest));
     IMP imp = method_getImplementation(md);
     //可以直接向执行C语言一样执行
-//    imp();
+    imp();
 }
 
 
@@ -94,11 +100,35 @@
 //    返回方法的参数的个数
     Method md = class_getInstanceMethod([self class], @selector(complexMethod:location:age:));
     unsigned int outCount = method_getNumberOfArguments(md);
+    char str[10] ;
     for (int i = 0; i < outCount; i++) {
         NSLog(@"%s",method_copyArgumentType(md, i));
     }
+    NSLog(@"%s",str);
 }
 
+
+/**
+ 获取一个方法的描述
+ */
+- (void)getMethodDescription
+{
+    Method md = class_getInstanceMethod([self class], @selector(complexMethod:location:age:));
+    struct objc_method_description *desc = method_getDescription(md);
+    NSLog(@"name:%s--- types:%s",sel_getName(desc->name),desc->types);
+}
+
+/**
+ 获取某个位置的参数的返回类型
+ */
+- (void)getArguemtnType
+{
+    Method md = class_getInstanceMethod([self class], @selector(complexMethod:location:age:));
+    char str[10] ;
+    unsigned int outCount = method_getNumberOfArguments(md);
+    method_getArgumentType(md, outCount-1, str, 10);
+    NSLog(@"%s",str);
+}
 
 /**
  通过引用返回方法的返回值类型字符串
@@ -157,4 +187,13 @@
 {
     NSLog(@"%s",__func__);
 }
+
+- (Son *)son
+{
+    if (_son == nil) {
+        _son = [[Son alloc] init];
+    }
+    return _son;
+}
+
 @end

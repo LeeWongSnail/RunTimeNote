@@ -19,4 +19,8 @@
 - (void)setIMP;
 - (void)exchangeMethod;
 
+- (void)getNotIMPMethodImp;
+- (void)getArguemtnType;
+- (void)getMethodDescription;
+
 @end
