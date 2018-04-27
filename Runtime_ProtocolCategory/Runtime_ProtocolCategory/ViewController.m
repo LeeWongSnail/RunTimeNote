@@ -31,12 +31,12 @@
     Runtime_Protocol *prop = [[Runtime_Protocol alloc] init];
 //    [prop getProtocol];
 //    [prop getProtocolList];
-//    [prop addProtocolDurRuntime];
+    [prop addProtocolDurRuntime];
 //    [prop copyProtocolPropertyList];
 //    [prop protocolEqual];
 //    [prop getSpecificProperty];
     
-    [prop protocolConformProtocol];
+//    [prop protocolConformProtocol];
 }
 
 - (void)viewDidLoad {
