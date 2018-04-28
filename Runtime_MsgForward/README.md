@@ -537,11 +537,34 @@ bool class_respondsToSelector_inst(Class cls, SEL sel, id inst)
 
 如果前面讲的这两个方法都不实现,我们去实现最后一步 消息转发
 
+```objc
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
+{
+    NSMethodSignature *signature = [super methodSignatureForSelector:aSelector];
+    if (!signature) {
+        if ([Runtime_Target instancesRespondToSelector:aSelector]) {
+            signature = [Runtime_Target instanceMethodSignatureForSelector:aSelector];
+        }
+    }
+    return signature;
+}
+
+- (void)forwardInvocation:(NSInvocation *)anInvocation
+{
+    NSString *selName = NSStringFromSelector(anInvocation.selector);
+    if ([selName isEqualToString:@"noIMPMethod"]) {
+        [anInvocation invokeWithTarget:self.target];
+    }
+    
+}
+```
 
 先看方法的入口:
 
 ![](http://og0h689k8.bkt.clouddn.com/18-4-28/62171371.jpg)
 
+接下来会调用哪个方法呢
 
+![](http://og0h689k8.bkt.clouddn.com/18-4-28/81924777.jpg)
 
 
