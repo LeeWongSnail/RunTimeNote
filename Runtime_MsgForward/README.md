@@ -568,3 +568,27 @@ bool class_respondsToSelector_inst(Class cls, SEL sel, id inst)
 ![](http://og0h689k8.bkt.clouddn.com/18-4-28/81924777.jpg)
 
 
+这个方法正是我们上面实现的 那么接下来会调用我们实现的这个方法,当我们的方法调用完成会返回一个签名`NSMethodSignature`
+
+这个方法调用之后,会调用这个方法：
+
+![](http://og0h689k8.bkt.clouddn.com/18-5-2/17633911.jpg)
+
+仔细看一下图片中要调用的是`_forwardStackInvocation:`,从方法的命名感觉是个私有的方法。
+
+虽然不明白这个方法是做什么用的,但是这个方法跟我们重写的方法有几分相似,我们先接着往下看。
+
+很明显 我们并没有实现这个方法 因此 方法会继续进行转发
+
+![](http://og0h689k8.bkt.clouddn.com/18-5-2/67090917.jpg)
+
+`forwardInvocation` 这个方法我们就比较熟悉了 正式我们重写的那个方法！
+
+因为我们实现了这个方法,因此运行时会找到我们重写的方法然后去调用我们重写的方法。
+
+
+## 总结
+
+上面就是整个的方法转发流程
+
+
